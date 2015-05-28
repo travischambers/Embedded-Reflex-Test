@@ -1,0 +1,15 @@
+################################################################
+# Travis CI Configuration file for Embedded Reflex Test
+# Created by Luke Hsiao & Travis Chambers
+# 28 May 2015
+################################################################
+language: c
+compiler:
+  - gcc
+#  - clang
+
+# Run Unit Tests
+# script: cd tests && make
+  
+notifications:
+  email: false  
