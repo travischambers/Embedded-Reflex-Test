@@ -1,7 +1,8 @@
 [![Stories in Ready](https://badge.waffle.io/tjchambers32/TDD-Exploration.png?label=ready&title=Ready)](https://waffle.io/tjchambers32/TDD-Exploration)
+[![Join the chat at https://gitter.im/tjchambers32/Embedded-Reflex-Test](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tjchambers32/Embedded-Reflex-Test?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 # TDD-Exploration
 
-[![Join the chat at https://gitter.im/tjchambers32/Embedded-Reflex-Test](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tjchambers32/Embedded-Reflex-Test?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 An exploration of the Model Conductor Hardware architecture and Test Driven Development in Embedded C 
 
 ## What does this code do?
