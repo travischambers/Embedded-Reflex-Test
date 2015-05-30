@@ -10,18 +10,18 @@
   :options_paths: []
   :release_build: false
   :use_auxiliary_dependencies: true
-  :build_root: build
+  :build_root: reflex-test/build
 :release_build:
   :use_assembly: false
   :artifacts: []
 :paths:
   :test:
-  - +:test/**
-  - -:test/support
+  - +:reflex-test/test/**
+  - -:reflex-test/test/support
   :source:
-  - src/**
+  - reflex-test/src/**
   :support:
-  - test/support
+  - reflex-test/test/support
   :include: []
   :test_toolchain_include: []
   :release_toolchain_include: []
@@ -35,10 +35,10 @@
 - :rake_columns: '120'
 :defines:
   :test:
-  - &9970140 []
+  - &14389300 []
   - TEST
   :test_preprocess:
-  - *9970140
+  - *14389300
   - TEST
   :release: []
   :release_preprocess: []
@@ -71,7 +71,7 @@
     uint32: UINT32
     int8: INT8
     bool: UINT8
-  :mock_path: build/test/mocks
+  :mock_path: reflex-test/build/test/mocks
   :verbosity: 3
   :unity_helper: false
 :cexception:
@@ -165,13 +165,13 @@
   :arguments: []
 :plugins:
   :load_paths:
-  - vendor/ceedling/plugins
+  - reflex-test/vendor/ceedling/plugins
   :enabled:
   - stdout_pretty_tests_report
   - module_generator
   :display_raw_test_results: false
-  :stdout_pretty_tests_report_path: vendor/ceedling/plugins/stdout_pretty_tests_report/lib
-  :module_generator_path: vendor/ceedling/plugins/module_generator/lib
+  :stdout_pretty_tests_report_path: reflex-test/vendor/ceedling/plugins/stdout_pretty_tests_report/lib
+  :module_generator_path: reflex-test/vendor/ceedling/plugins/module_generator/lib
 :module_generator:
   :project_root: ./
   :source_root: src/
