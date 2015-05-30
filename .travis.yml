@@ -3,16 +3,17 @@
 # Created by Luke Hsiao & Travis Chambers
 # 28 May 2015
 ################################################################
-language: c
-compiler:
-  - gcc
-#  - clang
-
-# Run Unit Tests
-# script: cd tests && make
+language: ruby
+rvm:
+  - "1.9.3"
+  - "2.0.0"
+install:
+  - bundle install
+script:
+  - bundle exec rake ci
   
 notifications:
-  email: false  
+  email: false
   webhooks:
     urls:
       - https://webhooks.gitter.im/e/eab4e551d60a98013fd3
