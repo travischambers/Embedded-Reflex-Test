@@ -4,6 +4,9 @@
 
 # TDD-Exploration
 
+Version: 1.0.0
+Wiki Page: [Reflex Test Wiki](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki)
+
 An exploration of the Model Conductor Hardware architecture and Test Driven Development in Embedded C 
 
 ## What does this code do?
