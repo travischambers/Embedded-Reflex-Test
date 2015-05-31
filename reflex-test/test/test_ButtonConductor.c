@@ -1,10 +1,8 @@
 #include "unity.h"
-#include "UnityHelper.h"
 #include "Types.h"
 
 #include "ButtonConductor.h"
-#include "MockButtonConductor.h"
-#include "MockButtonModel.h"
+#include "mock_ButtonHardware.h"
 
 void setup(void)
 {
