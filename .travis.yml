@@ -8,9 +8,9 @@ rvm:
   - "1.9.3"
   - "2.0.0"
 install:
-  - bundle install
+  - bundle install ceedling
 script:
-  - bundle exec rake ci
+  - rake test:all
   
 notifications:
   email: false
