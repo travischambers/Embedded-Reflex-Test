@@ -9,9 +9,9 @@
   :use_exceptions: FALSE
   :use_test_preprocessor: TRUE
   :use_auxiliary_dependencies: TRUE
-  :build_root: build
+  :build_root: reflex-test/build
 #  :release_build: TRUE
-  :test_file_prefix: test_
+  :test_file_prefix: ''
 
 #:release_build:
 #  :output: MyApp.out
@@ -24,12 +24,12 @@
 
 :paths:
   :test:
-    - +:test/**
-    - -:test/support
+    - +:reflex-test/test/**
+    - -:reflex-test/test/support
   :source:
-    - src/**
+    - reflex-test/src/**
   :support:
-    - test/support
+    - reflex-test/test/support
 
 :defines:
   # in order to add common defines:
@@ -64,7 +64,7 @@
 
 :plugins:
   :load_paths:
-    - vendor/ceedling/plugins
+    - reflex-test/vendor/ceedling/plugins
   :enabled:
     - stdout_pretty_tests_report
     - module_generator
