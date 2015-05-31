@@ -9,7 +9,7 @@ rvm:
 install:
   - bundle install
 script:
-  - rake test:all
+  - bundle exec rake test:all
   
 notifications:
   email: false
