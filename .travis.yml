@@ -5,12 +5,11 @@
 ################################################################
 language: ruby
 rvm:
-  - "1.9.3"
   - "2.0.0"
 install:
-  - bundle install ceedling
+  - bundle install
 script:
-  - rake test:all
+  - bundle exec rake test:all
   
 notifications:
   email: false
