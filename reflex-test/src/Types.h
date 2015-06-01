@@ -10,6 +10,7 @@ typedef unsigned short uint16;
 typedef short int16;
 typedef unsigned char uint8;
 typedef char int8;
+typedef char bool;
 
 // Application Special Value Definitions
 #ifndef TRUE
