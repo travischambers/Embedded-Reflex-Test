@@ -10,3 +10,9 @@ void testButtonHardware_Init(void) {
 
  ButtonHardware_Init();
 }
+
+void testButtonHardware_Read() {
+  buttons_read_ExpectAndReturn(1);
+
+  ButtonHardware_Read();
+}
