@@ -1,7 +1,6 @@
 #ifndef _ButtonConductor_H
 #define _ButtonConductor_H
 
-#include "Types.h"
 
 void ButtonConductor_Init(void);
 

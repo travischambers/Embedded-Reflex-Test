@@ -1,9 +1,8 @@
 #include "ButtonHardware.h"
+#include "buttons.h"
 
-void ButtonHardWare_Init(void) {
-  ButtonHardware_SetGPIOsAsInput();
-}
+void ButtonHardware_Init(void) {
 
-void ButtonHardware_SetGPIOsAsInput(void) {
+  buttons_init(); //sets the buttons as inputs
 
 }

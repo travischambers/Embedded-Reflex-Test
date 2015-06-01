@@ -10,6 +10,7 @@
 
 #include <stdint.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 #define DISPLAY_DEC 10
 #define DISPLAY_HEX 16

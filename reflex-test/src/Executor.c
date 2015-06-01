@@ -1,7 +1,6 @@
 #include "Executor.h"
 #include "ButtonConductor.h"
 #include "Model.h"
-#include "Types.h"
 
 void Executor_Init(void) {
 
@@ -13,5 +12,5 @@ void Executor_Init(void) {
 bool Executor_Run(void) {
 
   ButtonConductor_Run();
-
+  return true;
 }

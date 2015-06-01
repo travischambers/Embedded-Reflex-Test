@@ -1,9 +1,9 @@
 #include "ButtonConductor.h"
 #include "ButtonHardware.h"
+#include "buttons.h"
 
 void ButtonConductor_Init() {
   ButtonHardware_Init();
-  ButtonHardware_SetGPIOsAsInput();
 }
 
 void ButtonConductor_Run() {
