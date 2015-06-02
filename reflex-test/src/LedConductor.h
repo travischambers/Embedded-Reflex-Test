@@ -12,7 +12,6 @@
 #include <stdint.h>
 
 void LedConductor_Init(void);
-
-
+void LedConductor_Run(void);
 
 #endif /* LEDCONDUCTOR_H_ */

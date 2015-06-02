@@ -3,29 +3,27 @@
 #include "mock_ButtonHardware.h"
 #include "mock_ButtonModel.h"
 #include "mock_ButtonConductor.h"
-#include "mock_Model.h"
+#include "mock_LedConductor.h"
+#include "mock_intervalTimer.h"
 
 #include <stdbool.h>
 
-void setUp(void)
-{
+void setUp(void) {
 }
 
-void tearDown(void)
-{
+void tearDown(void) {
 }
 
-void testInitShouldCallInitOfAllConductorsAndTheModel(void)
-{
-  Model_Init_Expect();
+void testInitShouldCallInitOfAllConductors(void) {
   ButtonConductor_Init_Expect();
+  LedConductor_Init_Expect();
 
   Executor_Init();
 }
 
-void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void)
-{
+void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
   ButtonConductor_Run_Expect();
+  LedConductor_Run_Expect();
 
   TEST_ASSERT_EQUAL(true, Executor_Run());
 }

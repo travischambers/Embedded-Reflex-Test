@@ -2,7 +2,7 @@
 #include "buttons.h"
 
 #include <stdint.h>
-
+#include <stdio.h>
 
 void ButtonHardware_Init(void) {
 
@@ -14,5 +14,5 @@ void ButtonHardware_Read() {
 
   int32_t readButton;
   readButton = buttons_read();
-  printf("%d \n", readButton);
+  printf("%ld \n", readButton);
 }

@@ -8,10 +8,15 @@
 #include "LedHardware.h"
 #include "leds.h"
 #include <stdbool.h>
+
+#include <time.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 void LedHardware_Init() {
+
   int32_t ledValue;
   ledValue = leds_init(false);
-  printf("%d\n", ledValue);
+  printf("%ld\n", ledValue);
+
 }

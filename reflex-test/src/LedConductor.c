@@ -10,8 +10,13 @@
 #include "LedHardware.h"
 
 void LedConductor_Init() {
+
   LedModel_Init();
   LedHardware_Init();
+}
+
+void LedConductor_Run() {
+
 }
 
 

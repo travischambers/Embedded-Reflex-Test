@@ -6,7 +6,7 @@
 #include "xscugic.h"                  // Includes for the interrupt controller.
 #include "xscutimer.h"                // Includes for the private timer of the ARM.
 #include "xsysmon.h"                  // Includes for the system monitor (contains the XADC).
-#include "leds.h"                     // Easy LED access functions can be found here.
+#include "../../src/leds.h"           // Easy LED access functions can be found here.
 #include "globalTimer.h" // global timer routines aid in measuring time.
 //#include "intervalTimer.h"
 

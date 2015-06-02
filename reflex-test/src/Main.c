@@ -1,7 +1,6 @@
 #include "Executor.h"
 
-int AppMain(void)
-{
+int AppMain(void) {
   Executor_Init();
 
   while(Executor_Run());
@@ -10,8 +9,7 @@ int AppMain(void)
 }
 
 #ifndef TEST
-int main(void)
-{
+int main(void) {
   return AppMain();
 }
 #endif // TEST

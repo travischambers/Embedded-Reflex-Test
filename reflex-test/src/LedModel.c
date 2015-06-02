@@ -6,8 +6,14 @@
  */
 
 #include "LedModel.h"
+#include "intervalTimer.h"
 
 void LedModel_Init() {
-
+  intervalTimer_initAll();
 }
 
+
+//helper functions
+void generateRandomNumber() {
+
+}

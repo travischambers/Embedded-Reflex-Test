@@ -1,6 +1,6 @@
 // Provides easy access to the LEDs.
 #include "leds.h"
-#include "mio.h"
+#include "../vendor/supportFiles/mio.h"
 #include "xgpio.h"
 #include "stdio.h"
 
@@ -15,9 +15,11 @@ int leds_init(bool printFailedStatusFlag) {
 	if (printFailedStatusFlag) {
       printf("XGPIO_Initialize (leds) failed\n\r.");
       return 1;
-	}
-	return 0;
+	  }
+
+	  return 0;
   }
+
   // Also init LD4, connected to MIO7. Also inits the entire MIO system.
   mio_init(printFailedStatusFlag);
   // Set the direction for all signals to be outputs (0 = output).
