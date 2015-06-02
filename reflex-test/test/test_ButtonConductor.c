@@ -21,5 +21,16 @@ void testInitShouldCallHardwareInitAndSetButtonGPIOsAsInputs(void) {
 }
 
 void testButtonConductor_RunShouldMakeButtonsListenForPresses(void) {
-  TEST_IGNORE_MESSAGE("implement buttons listening for presses");
+  ButtonHardware_Read_ExpectAndReturn(0x1);
+  ButtonModel_SetButtonValue_Expect(0x1);
+  ButtonHardware_StopTimer_Expect();
+  ButtonHardware_GetResponseTime_ExpectAndReturn(1.12345);
+  ButtonModel_SetResponseTime_Expect(1.12345);
+  ButtonConductor_Run();
+
+
+  ButtonHardware_Read_ExpectAndReturn(0x0);
+  ButtonModel_SetButtonValue_Expect(0x0);
+
+  ButtonConductor_Run();
 }

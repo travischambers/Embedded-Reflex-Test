@@ -1,7 +1,7 @@
 #include "ButtonHardware.h"
 #include "buttons.h"
+#include "intervalTimer.h"
 
-#include <stdint.h>
 #include <stdio.h>
 
 void ButtonHardware_Init(void) {
@@ -10,9 +10,20 @@ void ButtonHardware_Init(void) {
 
 }
 
-void ButtonHardware_Read() {
+int32_t ButtonHardware_Read() {
 
   int32_t readButton;
   readButton = buttons_read();
-  printf("%ld \n", readButton);
+
+  return readButton;
+}
+
+void ButtonHardware_StopTimer() {
+  intervalTimer_stop(INTERVALTIMER_TIMER0);
+}
+
+double ButtonHardware_GetResponseTime() {
+  double responseTime;
+  intervalTimer_getTotalDurationInSeconds(INTERVALTIMER_TIMER0, &responseTime);
+  return responseTime;
 }

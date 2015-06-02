@@ -10,4 +10,13 @@ void ButtonConductor_Init() {
 
 void ButtonConductor_Run() {
 
+    double responseTime;
+    int32_t buttonValue = ButtonHardware_Read();
+    ButtonModel_SetButtonValue(buttonValue);
+    if (buttonValue != 0x0) {
+      ButtonHardware_StopTimer();
+      responseTime = ButtonHardware_GetResponseTime();
+      ButtonModel_SetResponseTime(responseTime);
+    }
+
 }

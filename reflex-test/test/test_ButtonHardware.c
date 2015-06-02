@@ -3,6 +3,7 @@
 #include "mock_ButtonModel.h"
 #include "mock_ButtonConductor.h"
 #include "mock_buttons.h"
+#include "mock_intervalTimer.h"
 
 void testButtonHardware_Init(void) {
 
