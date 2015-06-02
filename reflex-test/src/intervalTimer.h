@@ -83,24 +83,6 @@ uint32_t intervalTimer_initAll();
 uint32_t intervalTimer_resetAll();
 
 /**
- * Tests all three hardware timers by calling intervalTimer_runTest() on each
- * @return 0 on success or INTERVALTIMER_TIMER_ERROR on error.
- */
-uint32_t intervalTimer_testAll();
-
-/**
- * Tests the specified timer be:
- * 	1. Reseting the counter and verifying it was reset.
- * 	2. Starting the counter and verifying that values change.
- * 	3. Stopping the counter and verifying that values do NOT change.
- * @param  timerNumber Number of the timer to start. Valid values are
- *                     INTERVALTIMER_TIMER0, INTERVALTIMER_TIMER1, and
- *                     INTERVALTIMER_TIMER2
- * @return             0 on success or INTERVALTIMER_TIMER_ERROR on error.
- */
-uint32_t intervalTimer_runTest(uint32_t timerNumber);
-
-/**
  * Calculates the time that has transpired since the counter was last reset
  * and started.
  * @param  timerNumber Number of the timer to start. Valid values are
