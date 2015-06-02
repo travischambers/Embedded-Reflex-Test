@@ -1,21 +1,25 @@
 #include "unity.h"
-#include "Types.h"
-
 #include "ButtonConductor.h"
+
 #include "mock_ButtonHardware.h"
+#include "mock_ButtonModel.h"
+#include "mock_buttons.h"
 
-void setup(void)
-{
+#include <stdint.h>
+
+void setup(void) {
 }
 
-void teardDown(void)
-{
+void tearDown(void) {
 }
 
-void testInitShouldCallHardwareInitAndSetButtonGPIOsAsInputs(void)
-{
+void testInitShouldCallHardwareInitAndSetButtonGPIOsAsInputs(void) {
+  ButtonModel_Init_Expect();
   ButtonHardware_Init_Expect();
-  ButtonHardware_SetGPIOsAsInput_Expect();
 
   ButtonConductor_Init();
+}
+
+void testButtonConductor_RunShouldMakeButtonsListenForPresses(void) {
+  TEST_IGNORE_MESSAGE("implement buttons listening for presses");
 }

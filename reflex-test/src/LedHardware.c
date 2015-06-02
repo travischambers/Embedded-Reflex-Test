@@ -1,0 +1,17 @@
+/*
+ * LedHardware.c
+ *
+ *  Created on: Jun 1, 2015
+ *      Author: travis
+ */
+
+#include "LedHardware.h"
+#include "leds.h"
+#include <stdbool.h>
+#include <stdio.h>
+
+void LedHardware_Init() {
+  int32_t ledValue;
+  ledValue = leds_init(false);
+  printf("%d\n", ledValue);
+}
