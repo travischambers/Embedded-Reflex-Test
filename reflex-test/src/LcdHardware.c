@@ -6,5 +6,9 @@
  */
 
 #include "LcdHardware.h"
+#include "display.h"
 
+void LcdHardware_Init() {
+  display_init();
+}
 

@@ -7,4 +7,7 @@
 
 #include "TimerModel.h"
 
+void TimerModel_Init() {
+
+}
 

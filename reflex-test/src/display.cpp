@@ -6,8 +6,8 @@
  */
 
 #include "display.h"
-#include "Adafruit_TFTLCD.h"
-#include "Adafruit_STMPE610.h"
+#include "../vendor/supportFiles/Adafruit_TFTLCD.h"
+#include "../vendor/supportFiles/Adafruit_STMPE610.h"
 #include <stdbool.h>
 
 // Just define these values here. They won't change in practice and I want to avoid

@@ -8,7 +8,7 @@
 #ifndef TIMERMODEL_H_
 #define TIMERMODEL_H_
 
-
+void TimerModel_Init(void);
 
 
 

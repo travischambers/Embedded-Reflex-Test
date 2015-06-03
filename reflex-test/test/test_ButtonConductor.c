@@ -13,7 +13,7 @@ void setup(void) {
 void tearDown(void) {
 }
 
-void testInitShouldCallHardwareInitAndSetButtonGPIOsAsInputs(void) {
+void testButtonConductor_InitShouldCallModelAndHardwareInit(void) {
   ButtonModel_Init_Expect();
   ButtonHardware_Init_Expect();
 

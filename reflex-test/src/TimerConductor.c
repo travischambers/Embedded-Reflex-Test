@@ -10,7 +10,8 @@
 #include "TimerModel.h"
 
 void TimerConductor_Init() {
-
+  TimerHardware_Init();
+  TimerModel_Init();
 }
 
 void TimerConductor_Run() {

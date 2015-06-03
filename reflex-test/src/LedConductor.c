@@ -14,8 +14,6 @@ void LedConductor_Init() {
 
   LedModel_Init();
   LedHardware_Init();
-  intervalTimer_initAll();
-  intervalTimer_start(INTERVALTIMER_TIMER0);
 }
 
 void LedConductor_Run() {

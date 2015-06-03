@@ -8,7 +8,7 @@
 #ifndef LCDHARDWARE_H_
 #define LCDHARDWARE_H_
 
-
+void LcdHardware_Init(void);
 
 
 

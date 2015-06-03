@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include "buttons.h"
 #include "../../reflex-test_bsp/ps7_cortexa9_0/include/xparameters.h"
-#include "../vendor/supportFiles/display.h"
+#include "display.h"
 
 // Screen Position Macros
 #define FOURTH(X)         ((X)/4) // Divide the given number by 4

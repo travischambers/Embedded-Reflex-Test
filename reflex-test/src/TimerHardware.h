@@ -9,7 +9,7 @@
 #define TIMERHARDWARE_H_
 
 
-
+void TimerHardware_Init(void);
 double TimerHardware_GetResponseTime(void);
 void TimerHardware_StopTimer(void);
 void TimerHardware_StartTimer(void);

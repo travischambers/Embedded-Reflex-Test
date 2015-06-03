@@ -8,8 +8,7 @@
 #ifndef LCDMODEL_H_
 #define LCDMODEL_H_
 
-
-
+void LcdModel_Init(void);
 
 
 #endif /* LCDMODEL_H_ */

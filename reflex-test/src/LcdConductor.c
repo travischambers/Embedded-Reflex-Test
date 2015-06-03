@@ -10,7 +10,8 @@
 #include "LcdModel.h"
 
 void LcdConductor_Init() {
-
+  LcdModel_Init();
+  LcdHardware_Init();
 }
 
 void LcdConductor_Run() {

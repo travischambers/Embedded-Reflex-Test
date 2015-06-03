@@ -9,6 +9,11 @@
 #include "ReflexTestData.h"
 #include "intervalTimer.h"
 
+void TimerHardware_Init() {
+  intervalTimer_initAll();
+  TimerHardware_StartTimer();
+}
+
 double TimerHardware_GetResponseTime() {
     double responseTime;
     intervalTimer_getTotalDurationInSeconds(INTERVALTIMER_TIMER0, &responseTime);

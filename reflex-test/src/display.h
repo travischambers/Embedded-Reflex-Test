@@ -58,7 +58,7 @@ void
   uint16_t bg, uint8_t size),
   display_setCursor(int16_t x, int16_t y),
   display_setTextColor(uint16_t c),
-  display_setTextColor(uint16_t c, uint16_t bg),
+//  display_setTextColor(uint16_t c, uint16_t bg),
   display_setTextSize(uint8_t s),
   display_setTextWrap(bool w),
   display_setRotation(uint8_t r);
@@ -68,14 +68,14 @@ void
 
   // Print routines
   size_t display_println(const char str[]);
-  size_t display_println(char c);
-  size_t display_println(unsigned char c, int base = DISPLAY_DEC);
-  size_t display_println(int num, int base = DISPLAY_DEC);
-  size_t display_println(unsigned int num, int base = DISPLAY_DEC);
-  size_t display_println(long num, int base = DISPLAY_DEC);
-  size_t display_println(unsigned long num, int base = DISPLAY_DEC);
-  size_t display_println(double num, int fieldWidth = 2);
-  size_t display_println(void);
+//  size_t display_println(char c);
+//  size_t display_println(unsigned char c, int base = DISPLAY_DEC);
+//  size_t display_println(int num, int base = DISPLAY_DEC);
+//  size_t display_println(unsigned int num, int base = DISPLAY_DEC);
+//  size_t display_println(long num, int base = DISPLAY_DEC);
+//  size_t display_println(unsigned long num, int base = DISPLAY_DEC);
+//  size_t display_println(double num, int fieldWidth = 2);
+//  size_t display_println(void);
 
   // Display test routines.
   unsigned long display_testLines(uint16_t color);

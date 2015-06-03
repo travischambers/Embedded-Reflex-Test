@@ -7,4 +7,6 @@
 
 #include "LcdModel.h"
 
+void LcdModel_Init() {
 
+}
