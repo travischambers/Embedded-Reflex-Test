@@ -20,3 +20,6 @@ void LedHardware_Init() {
   printf("%ld\n", ledValue);
 
 }
+void LedHardware_Flash(int32_t ledNumber) {
+  leds_write((int)ledNumber);
+}

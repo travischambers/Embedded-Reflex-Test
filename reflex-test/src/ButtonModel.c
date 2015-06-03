@@ -1,24 +1,21 @@
 #include "ButtonModel.h"
+#include "ReflexTestData.h"
 
-static int32_t buttonValue = 0;
-static double responseTime = 0;
 void ButtonModel_Init() {
 
 }
 
+void ButtonModel_SetPressedButton(int32_t value) {
+  //defines precedence that users can't press multiple buttons simultaneously
+  //button0 has highest precedence, button3 has lowest
 
-void ButtonModel_SetButtonValue(int32_t value) {
+  //TODO check value and mask it to only pass the highest precedence button press
 
-    buttonValue = value;
+    ReflexTestData_SetPressedButton(value);
 }
 
 
 int32_t ButtonModel_GetPressedButton() {
-  //defines precedence that users can't press multiple buttons simultaneously
-  //button0 has highest precedence, button3 has lowest
-
+  ReflexTestData_GetPressedButton();
 }
 
-void ButtonModel_SetResponseTime(double time) {
- responseTime = time;
-}

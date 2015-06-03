@@ -4,7 +4,7 @@
 #include <stdint.h>
 
 void ButtonModel_Init(void);
-void ButtonModel_SetButtonValue(int32_t value);
+void ButtonModel_SetPressedButton(int32_t value);
 void ButtonModel_SetResponseTime(double time);
 
 #endif //BUTTONMODEL_H_

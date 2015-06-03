@@ -20,6 +20,12 @@ void LedConductor_Init() {
 
 void LedConductor_Run() {
 
+  int32_t ledNumber = 0;
+
+      if (!LedModel_IsSequenceDone()) {
+        ledNumber = LedModel_GetNextLed();
+        LedHardware_Flash(ledNumber);
+      }
 }
 
 

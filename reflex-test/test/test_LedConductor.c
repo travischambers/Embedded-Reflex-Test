@@ -3,6 +3,7 @@
 #include "mock_LedModel.h"
 #include "mock_LedHardware.h"
 #include "mock_intervalTimer.h"
+#include <stdbool.h>
 
 void setup() {
 
@@ -19,4 +20,17 @@ void testInitShouldCallModelAndHardwareInit() {
   intervalTimer_start_ExpectAndReturn(INTERVALTIMER_TIMER0, 0);
 
   LedConductor_Init();
+}
+
+void testLedConductor_RunShouldFlashNextLedInSequence() {
+
+  LedModel_IsSequenceDone_ExpectAndReturn(false);
+  LedModel_GetNextLed_ExpectAndReturn(1);
+  LedHardware_Flash_Expect(1);
+
+  LedConductor_Run();
+
+  LedModel_IsSequenceDone_ExpectAndReturn(true);
+
+  LedConductor_Run();
 }

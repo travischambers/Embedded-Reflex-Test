@@ -13,5 +13,6 @@
 
 void LedHardware_Init(void);
 
+void LedHardware_Flash(int32_t ledNumber);
 
 #endif /* LEDHARDWARE_H */

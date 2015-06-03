@@ -9,15 +9,12 @@
 #define LEDMODEL_H_
 
 #include <stdint.h>
+#include <stdbool.h>
 
-// Uncomment the line below to enable debug output.
-#define LEDMODEL_DEBUG
-
-#define LEDMODEL_SEQUENCE_LENGTH 10
-#define LEDMODEL_NUMBER_OF_LEDS 4
-
-void LedModel_Init(void);
-
-uint32_t* LedModel_generateSequence(int32_t seed);
+void LedModel_Init();
+int32_t LedModel_GetNextLed();
+bool LedModel_IsSequenceDone(void);
 
 #endif /* LEDMODEL_H_ */
+
+

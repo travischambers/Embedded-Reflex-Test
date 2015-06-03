@@ -18,12 +18,3 @@ int32_t ButtonHardware_Read() {
   return readButton;
 }
 
-void ButtonHardware_StopTimer() {
-  intervalTimer_stop(INTERVALTIMER_TIMER0);
-}
-
-double ButtonHardware_GetResponseTime() {
-  double responseTime;
-  intervalTimer_getTotalDurationInSeconds(INTERVALTIMER_TIMER0, &responseTime);
-  return responseTime;
-}

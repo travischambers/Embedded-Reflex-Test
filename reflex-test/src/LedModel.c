@@ -6,35 +6,18 @@
  */
 
 #include "LedModel.h"
+#include "ReflexTestData.h"
 #include <stdlib.h>
 #include <stdio.h>
-static uint32_t sequence[LEDMODEL_SEQUENCE_LENGTH];
 
 void LedModel_Init() {
 
 }
 
-
-void LedModel_printSequence() {
-  int i;
-  printf("{");
-  for (i = 0; i < LEDMODEL_SEQUENCE_LENGTH-1; i++) {
-    printf("%lu, ", sequence[i]);
-  }
-  printf("%lu};\n", sequence[LEDMODEL_SEQUENCE_LENGTH-1]);
+int32_t LedModel_GetNextLed() {
+  return ReflexTestData_GetNextLed();
 }
 
-uint32_t* LedModel_generateSequence(int32_t seed) {
-
-  srand(seed); //initialize random number generator
-  int i;
-  for (i = 0; i < LEDMODEL_SEQUENCE_LENGTH; i++) {
-    sequence[i] = rand() % LEDMODEL_NUMBER_OF_LEDS;
-  }
-
-#ifdef LEDMODEL_DEBUG
-  LedModel_printSequence();
-#endif
-
-  return sequence;
+bool LedModel_IsSequenceDone() {
+  return ReflexTestData_IsSequenceDone();
 }

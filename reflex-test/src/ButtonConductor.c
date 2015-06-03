@@ -10,13 +10,12 @@ void ButtonConductor_Init() {
 
 void ButtonConductor_Run() {
 
-    double responseTime;
+  // if (in waiting_for_response state)
     int32_t buttonValue = ButtonHardware_Read();
-    ButtonModel_SetButtonValue(buttonValue);
+    ButtonModel_SetPressedButton(buttonValue);
     if (buttonValue != 0x0) {
-      ButtonHardware_StopTimer();
-      responseTime = ButtonHardware_GetResponseTime();
-      ButtonModel_SetResponseTime(responseTime);
+//TODO move to TimerConductor      ButtonHardware_StopTimer();
+//TODO move.... somewhere      responseTime = ButtonHardware_GetResponseTime();
+//TODO move to TimerConductor      ButtonModel_SetResponseTime(responseTime);
     }
-
 }
