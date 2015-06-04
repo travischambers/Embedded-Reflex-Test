@@ -21,7 +21,12 @@ void LedModel_Init();
  * Returns the next LED to flash in the sequence.
  * @return The number of the LED to flash next.
  */
-int32_t LedModel_GetNextLedAndIncrement();
+int32_t LedModel_GetNextLed();
+
+/**
+ * Increments the Index of the ReflexTestData.
+ */
+void LedModel_IncrementIndex();
 
 /**
  * Called by the Conductor to get the current state from ReflexTestData

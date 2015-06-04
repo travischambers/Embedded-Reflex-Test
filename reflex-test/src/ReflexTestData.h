@@ -65,7 +65,12 @@ uint32_t* ReflexTestData_GenerateSequence(int32_t seed);
  * index of the sequence. Used by LED Model.
  * @return  The value of the next LED to flash.
  */
-int32_t ReflexTestData_GetNextLedAndIncrement(void);
+int32_t ReflexTestData_GetNextLed(void);
+
+/**
+ * Increments the internal index.
+ */
+void ReflexTestData_IncrementIndex();
 
 /**
  * Checks to see if entire sequence has already been shown. Used by LED Model.

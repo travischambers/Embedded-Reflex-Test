@@ -61,7 +61,8 @@ void testLedConductor_ShouldDoNothingInWaitBetweenFlashState(void) {
 void testLedConductor_TurnOnTheNextLEDInLEDState(void) {
   // NOTE: The interval timer is started by the Timer Conductor
   LedModel_GetCurrentState_ExpectAndReturn(blink_led_st);
-  LedModel_GetNextLedAndIncrement_ExpectAndReturn(0x1);
+  LedModel_GetNextLed_ExpectAndReturn(0x1);
+  LedModel_IncrementIndex_Expect();
   LedHardware_Enable_Expect(0x1);
   LedConductor_Run();
 }
