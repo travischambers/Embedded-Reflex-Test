@@ -22,7 +22,15 @@ ReflexTest_st TimerModel_GetCurrentState(void);
  * Sets the most recent response time in ReflexTestData to the parameter.
  * @param responseTime The response time value to save.
  */
-void TimerModel_SetResponseTime(double responseTime);
+void TimerModel_SetMostRecentResponseTime(double responseTime);
+
+/**
+ * This triggers an actual save of the passed-in response time to the internal
+ * array storing this rounds response times. Stores the responseTime at the
+ * index of the current sequence. These stats are then used in calculation.
+ * @param responseTime The response time to save for the round.
+ */
+void TimerModel_RecordResponseTime(double responseTime);
 
 /**
  * Deletes all te stats from the previous run to be ready for the new round.

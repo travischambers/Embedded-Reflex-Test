@@ -46,7 +46,7 @@ void testTimerConductor_StopTimerInBlankScreenAndClearStatsState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(blank_screen_st);
   TimerHardware_StopTimer_Expect();
   TimerHardware_GetResponseTime_ExpectAndReturn(8.88);
-  TimerModel_SetResponseTime_Expect(8.88);
+  TimerModel_SetMostRecentResponseTime_Expect(8.88);
   TimerModel_ClearOldStats_Expect();
   TimerConductor_Run();
 }
@@ -72,7 +72,8 @@ void testTimerConductor_TurnOffTheTimerInButtonPressedState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(button_pressed_st);
   TimerHardware_StopTimer_Expect();
   TimerHardware_GetResponseTime_ExpectAndReturn(8.88);
-  TimerModel_SetResponseTime_Expect(8.88);
+  TimerModel_SetMostRecentResponseTime_Expect(8.88);
+  TimerModel_RecordResponseTime_Expect(8.88);
   TimerConductor_Run();
 }
 
