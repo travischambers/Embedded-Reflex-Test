@@ -142,6 +142,7 @@ void Executor_Init(void) {
   LedConductor_Init();
   LcdConductor_Init();
   TimerConductor_Init();
+  ReflexTestData_Init();
 }
 
 bool Executor_Run(void) {
