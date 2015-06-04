@@ -4,6 +4,9 @@
 #include "TimerConductor.h"
 #include "LcdConductor.h"
 
+#define TICK_PERIOD       1                       // 1ms tick period
+#define FIVE_SECOND_WAIT  (5000 / (TICK_PERIOD))  // 5000ms = 5s
+
 void Executor_Init(void) {
 
   //call init on each of the conductors
@@ -26,7 +29,8 @@ bool Executor_Run(void) {
   return true;
 }
 
-reflexTest_st ReflexTest_tick_Function(reflexTest_st currentState) {
+ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
+  static uint32_t fiveSecondTimer = 0;
 
   // state actions
   switch (currentState) {
@@ -35,6 +39,7 @@ reflexTest_st ReflexTest_tick_Function(reflexTest_st currentState) {
     case show_info_st:
       break;
     case wait_five_seconds_st:
+      fiveSecondTimer++;
       break;
     case wait_between_flash_st:
       break;
@@ -51,11 +56,13 @@ reflexTest_st ReflexTest_tick_Function(reflexTest_st currentState) {
    // state update
   switch (currentState) {
     case init_st:
-      //
+      currentState = show_info_st;
       break;
     case show_info_st:
+      currentState = wait_info_st;
       break;
     case wait_five_seconds_st:
+      if (fiveSecondTimer > )
       break;
     case wait_between_flash_st:
       break;
