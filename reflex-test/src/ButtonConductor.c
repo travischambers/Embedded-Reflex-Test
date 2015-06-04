@@ -10,12 +10,32 @@ void ButtonConductor_Init() {
 
 void ButtonConductor_Run() {
 
-  // if (in waiting_for_response state)
-    int32_t buttonValue = ButtonHardware_Read();
-    ButtonModel_SetPressedButton(buttonValue);
-    if (buttonValue != 0x0) {
-//TODO move to TimerConductor      ButtonHardware_StopTimer();
-//TODO move.... somewhere      responseTime = ButtonHardware_GetResponseTime();
-//TODO move to TimerConductor      ButtonModel_SetResponseTime(responseTime);
-    }
+  // state actions
+  switch (ButtonModel_getCurrentState()) {
+    case init_st:
+      break;
+    case show_info_st:
+      break;
+    case wait_info_st:
+      break;
+    case wait_five_seconds_st:
+      break;
+    case blank_screen_st:
+      break;
+    case wait_between_flash_st:
+      break;
+    case blink_led_st:
+      break;
+    case wait_for_button_st:
+      break;
+    case button_pressed_st:
+      break;
+    case show_stats_st:
+      break;
+    case wait_stats_st:
+      break;
+    case update_scores_st:
+      break;
+  }
+
 }
