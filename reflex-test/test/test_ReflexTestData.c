@@ -25,3 +25,17 @@ void testReflexTestData_InitShouldInitAllStateVariables() {
   // NOTE: Sequence cannot be directly tested, but if the above worked,
   // the sequence will have been cleared as well.
 }
+
+void testReflexTestData_CheckIfIsCorrectButtonWorks() {
+  // Generate a sequence of:
+  // {1, 1, 1, 2, 3, 3, 3, 2, 2, 1};
+  ReflexTestData_GenerateSequence(123);
+
+  // Set the button to the correct button
+  ReflexTestData_SetPressedButton(0x1);
+  TEST_ASSERT_TRUE(ReflexTestData_IsCorrectButtonPressed());
+
+  // Set button to incorrect button
+  ReflexTestData_SetPressedButton(0x3);
+  TEST_ASSERT_FALSE(ReflexTestData_IsCorrectButtonPressed());
+}

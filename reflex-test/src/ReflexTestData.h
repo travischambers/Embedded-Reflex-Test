@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 // Uncomment the line below to enable debug output.
-//#define LEDMODEL_DEBUG
+// #define REFLEXTESTDATA_DEBUG
 
 #define REFLEXTESTDATA_ERROR -1
 #define REFLEXTESTDATA_SEQUENCE_LENGTH 10

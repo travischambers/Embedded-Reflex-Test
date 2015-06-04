@@ -57,7 +57,7 @@ int32_t ReflexTestData_GetCurrentIndex() {
   return index;
 }
 
-void ReflexTestData_printSequence() {
+void ReflexTestData_PrintSequence() {
   int i;
   printf("{");
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH-1; i++) {
