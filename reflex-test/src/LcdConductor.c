@@ -16,7 +16,7 @@ void LcdConductor_Init() {
 
 void LcdConductor_Run() {
   // state actions
-  switch (LcdModel_getCurrentState()) {
+  switch (LcdModel_GetCurrentState()) {
     case init_st:
       break;
     case show_info_st:

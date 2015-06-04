@@ -11,6 +11,6 @@ void LcdModel_Init() {
 
 }
 
-reflexTest_st LcdModel_GetCurrentState() {
+ReflexTest_st LcdModel_GetCurrentState() {
   return ReflexTestData_GetCurrentState();
 }

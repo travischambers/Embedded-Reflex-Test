@@ -21,6 +21,6 @@ bool LedModel_IsSequenceDone() {
   return ReflexTestData_IsSequenceDone();
 }
 
-reflexTest_st LedModel_GetCurrentState() {
+ReflexTest_st LedModel_GetCurrentState() {
   return ReflexTestData_GetCurrentState();
 }

@@ -18,7 +18,7 @@ void LedConductor_Init() {
 
 void LedConductor_Run() {
   // state actions
-  switch (LedModel_getCurrentState()) {
+  switch (LedModel_GetCurrentState()) {
     case init_st:
       break;
     case show_info_st:

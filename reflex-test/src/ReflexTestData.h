@@ -43,13 +43,13 @@ void ReflexTestData_Init(void);
  * Sets the current state to the parameter passed in.
  * @param newState The Reflex Data state to set the currentState to.
  */
-void ReflexTestData_SetCurrentState(reflexTest_st newState);
+void ReflexTestData_SetCurrentState(ReflexTest_st newState);
 
 /**
  * Returns the current state.
  * @return  The current ReflexTest state.
  */
-reflexTest_st ReflexTestData_GetCurrentState(void);
+ReflexTest_st ReflexTestData_GetCurrentState(void);
 
 /**
  * Generates a random sequence of REFLEXTESTDATA_SEQUENCE_LENGTH and Returns
@@ -83,7 +83,7 @@ int32_t ReflexTestData_GetPressedButton(void);
  * Returns true if a button is currently pressed.
  * @return  TRUE if a button is currently being pressed.
  */
-bool ReflexTestData_isCorrectButtonPressed(void);
+bool ReflexTestData_IsCorrectButtonPressed(void);
 
 /**
  * Sets the value of the pressed button. Used by the button model.

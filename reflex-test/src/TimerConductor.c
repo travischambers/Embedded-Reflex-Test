@@ -16,7 +16,7 @@ void TimerConductor_Init() {
 
 void TimerConductor_Run() {
   // state actions
-  switch (TimerModel_getCurrentState()) {
+  switch (TimerModel_GetCurrentState()) {
     case init_st:
       break;
     case show_info_st:

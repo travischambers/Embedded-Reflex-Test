@@ -27,6 +27,6 @@ void ButtonModel_SetResponseTime(double time);
  * Called by the Conductor to get the current state from ReflexTestData
  * @return  returns the current state
  */
-reflexTest_st ButtonModel_GetCurrentState(void);
+ReflexTest_st ButtonModel_GetCurrentState(void);
 
 #endif //BUTTONMODEL_H_

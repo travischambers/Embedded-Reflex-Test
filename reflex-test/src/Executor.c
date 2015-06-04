@@ -10,30 +10,7 @@
 #define TWO_SECOND_WAIT   (2000 / (TICK_PERIOD))
 #define ONE_SECOND_WAIT   (1000 / (TICK_PERIOD))
 
-void Executor_Init(void) {
-
-  //call init on each of the conductors
-  ButtonConductor_Init();
-  LedConductor_Init();
-  LcdConductor_Init();
-  TimerConductor_Init();
-}
-
-bool Executor_Run(void) {
-
-  //state actions first
-  ButtonConductor_Run();
-  LedConductor_Run();
-  LcdConductor_Run();
-  TimerConductor_Run();
-
-  //state update next
-  ReflexTest_st nextState = ReflexTest_tick_Function(ReflexTestData_GetCurrentState());
-  ReflexTestData_SetCurrentState(nextState);
-  return true;
-}
-
-ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
+ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
   static uint32_t fiveSecondTimer = 0;
   static uint32_t flashTimer = 0;
   static uint32_t flashWait = 0;  // value for randomized flash wait
@@ -89,11 +66,12 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
       break;
     case wait_five_seconds_st:
       // Wait here until a user pushes a button and holds it for 5 sec.
-      if (fiveSecondTimer >= FIVE_SECOND_WAIT && ReflexTestData_isButtonPressed()) {
+      if (  fiveSecondTimer >= FIVE_SECOND_WAIT &&
+            (ReflexTestData_GetPressedButton() != 0x0)) {
         currentState = blank_screen_st;
       }
       // If they let go of the button before 5 sec, go back to waiting.
-      else if (!ReflexTestData_isButtonPressed()) {
+      else if (ReflexTestData_GetPressedButton() == 0x0) {
         currentState = wait_info_st;
       }
       else {
@@ -128,11 +106,11 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
       break;
     case wait_for_button_st:
       // If the user doesn't push a button within two seconds, start the game over
-      if (buttonTimeoutTimer >= TWO_SECOND_WAIT && !ReflexTestData_isCorrectButtonPressed()) {
+      if (buttonTimeoutTimer >= TWO_SECOND_WAIT && !ReflexTestData_IsCorrectButtonPressed()) {
         currentState = wait_info_st;
       }
       // the moment they do push a button, move states.
-      else if (ReflexTestData_isCorrectButtonPressed()) {
+      else if (ReflexTestData_IsCorrectButtonPressed()) {
         currentState = button_pressed_st;
       }
       else {
@@ -155,4 +133,27 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
    }
   // return the new state.
   return currentState;
+}
+
+void Executor_Init(void) {
+
+  //call init on each of the conductors
+  ButtonConductor_Init();
+  LedConductor_Init();
+  LcdConductor_Init();
+  TimerConductor_Init();
+}
+
+bool Executor_Run(void) {
+
+  //state actions first
+  ButtonConductor_Run();
+  LedConductor_Run();
+  LcdConductor_Run();
+  TimerConductor_Run();
+
+  //state update next
+  ReflexTest_st nextState = ReflexTest_TickFunction(ReflexTestData_GetCurrentState());
+  ReflexTestData_SetCurrentState(nextState);
+  return true;
 }

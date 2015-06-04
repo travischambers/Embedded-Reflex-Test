@@ -16,6 +16,6 @@ void LcdModel_Init(void);
  * Called by the Conductor to get the current state from ReflexTestData
  * @return  returns the current state
  */
-reflexTest_st LcdModel_GetCurrentState(void);
+ReflexTest_st LcdModel_GetCurrentState(void);
 
 #endif /* LCDMODEL_H_ */

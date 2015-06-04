@@ -20,6 +20,6 @@ bool LedModel_IsSequenceDone(void);
  * Called by the Conductor to get the current state from ReflexTestData
  * @return  returns the current state
  */
-reflexTest_st LedModel_GetCurrentState(void);
+ReflexTest_st LedModel_GetCurrentState(void);
 
 #endif /* LEDMODEL_H_ */

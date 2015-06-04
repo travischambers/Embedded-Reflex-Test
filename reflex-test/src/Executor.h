@@ -8,6 +8,4 @@
 void Executor_Init(void);
 bool Executor_Run(void);
 
-ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState);
-
 #endif // _EXECUTOR_H

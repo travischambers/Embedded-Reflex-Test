@@ -11,7 +11,7 @@ void ButtonConductor_Init() {
 void ButtonConductor_Run() {
 
   // state actions
-  switch (ButtonModel_getCurrentState()) {
+  switch (ButtonModel_GetCurrentState()) {
     case init_st:
       break;
     case show_info_st:

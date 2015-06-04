@@ -11,6 +11,6 @@ void TimerModel_Init() {
 
 }
 
-reflexTest_st TimerModel_GetCurrentState() {
+ReflexTest_st TimerModel_GetCurrentState() {
   return ReflexTestData_GetCurrentState();
 }

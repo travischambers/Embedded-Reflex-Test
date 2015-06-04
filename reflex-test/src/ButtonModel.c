@@ -18,6 +18,6 @@ int32_t ButtonModel_GetPressedButton() {
   ReflexTestData_GetPressedButton();
 }
 
-reflexTest_st ButtonModel_GetCurrentState() {
+ReflexTest_st ButtonModel_GetCurrentState() {
   return ReflexTestData_GetCurrentState();
 }

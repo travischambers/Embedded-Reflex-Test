@@ -16,6 +16,6 @@ void TimerModel_Init(void);
  * Called by the Conductor to get the current state from ReflexTestData
  * @return  returns the current state
  */
-reflexTest_st TimerModel_GetCurrentState(void);
+ReflexTest_st TimerModel_GetCurrentState(void);
 
 #endif /* TIMERMODEL_H_ */
