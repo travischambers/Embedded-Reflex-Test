@@ -18,4 +18,22 @@ void LcdModel_Init(void);
  */
 ReflexTest_st LcdModel_GetCurrentState(void);
 
+/**
+ * Gets the average response time for the player's last round.
+ * @return The average response time for the player's last round.
+ */
+double LcdModel_GetAverageResponseTime();
+
+/**
+ * Gets the minimum response time for the player's last round.
+ * @return The minimum response time for the player's last round.
+ */
+double LcdModel_GetMinResponseTime();
+
+/**
+ * Gets the maximum response time for the player's last round.
+ * @return The maximum response time for the player's last round.
+ */
+double LcdModel_GetMaxResponseTime();
+
 #endif /* LCDMODEL_H_ */

@@ -38,7 +38,10 @@ void LcdConductor_Run() {
     case button_pressed_st:
       break;
     case show_stats_st:
-      LcdHardware_ShowStats();
+      double average = LcdModel_GetAverageResponseTime();
+      double min = LcdModel_GetMinResponseTime();
+      double max = LcdModel_GetMaxResponseTime();
+      LcdHardware_ShowStats(average, min, max);
       break;
     case wait_stats_st:
       break;
