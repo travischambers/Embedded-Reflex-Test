@@ -26,6 +26,7 @@ void ReflexTestData_Init() {
   min = 5.0;
   max = 0.0;
   average = 0.0;
+  currentState = init_st;
 
   int i;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
@@ -48,7 +49,8 @@ int32_t ReflexTestData_GetNextLedAndIncrement() {
 }
 
 void ReflexTestData_IncrementIndex() {
-  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
+  // -1 so that index stays on the last element
+  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH-1) {
     index++;
   }
 }
