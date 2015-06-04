@@ -64,6 +64,8 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
     case wait_for_button_st:
       buttonTimeoutTimer++;
       break;
+    case button_pressed_st:
+      break;
     case show_stats_st:
       waitStatsTimer = 0;
       break;
@@ -71,6 +73,7 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
       waitStatsTimer++;
       break;
     case update_scores_st:
+      ReflexTestData_updateScores();
       break;
   }
 
@@ -125,26 +128,31 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
       break;
     case wait_for_button_st:
       // If the user doesn't push a button within two seconds, start the game over
-      if (buttonTimeoutTimer >= TWO_SECOND_WAIT && !ReflexTestData_isButtonPressed()) {
+      if (buttonTimeoutTimer >= TWO_SECOND_WAIT && !ReflexTestData_isCorrectButtonPressed()) {
         currentState = wait_info_st;
       }
       // the moment they do push a button, move states.
-      else if (ReflexTestData_isButtonPressed()) {
-        currentState = wait_between_flash_st;
+      else if (ReflexTestData_isCorrectButtonPressed()) {
+        currentState = button_pressed_st;
       }
       else {
         currentState = wait_for_button_st;
       }
       break;
+    case button_pressed_st:
+      currentState = wait_between_flash_st;
+      break;
     case show_stats_st:
       currentState = wait_stats_st;
       break;
     case wait_stats_st:
-
+      if (waitStatsTimer >= FIVE_SECOND_WAIT) {
+        currentState = update_scores_st;
+      }
       break;
     case update_scores_st:
       break;
    }
-
+  // return the new state.
   return currentState;
 }

@@ -27,6 +27,7 @@ typedef enum reflexTest_st {
   blank_screen_st,        // Blanks the screen to indicate game start
   blink_led_st,           // blink an led
   wait_for_button_st,     // wait for the user to press a button
+  button_pressed_st,      // user pressed the correct button.
   wait_between_flash_st,  // wait one second
   show_stats_st,          // show user's fastest, slowest, and average time
   wait_stats_st,          // Wait state for displaying stats
@@ -82,7 +83,7 @@ int32_t ReflexTestData_GetPressedButton(void);
  * Returns true if a button is currently pressed.
  * @return  TRUE if a button is currently being pressed.
  */
-bool ReflexTestData_isButtonPressed(void);
+bool ReflexTestData_isCorrectButtonPressed(void);
 
 /**
  * Sets the value of the pressed button. Used by the button model.
