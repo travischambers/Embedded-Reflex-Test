@@ -54,7 +54,7 @@ void testLedConductor_ShouldDoNothingInBlankScreenState(void) {
 }
 
 void testLedConductor_ShouldDoNothingInWaitBetweenFlashState(void) {
-  LedModel_GetNextLedAndIncrement_ExpectAndReturn(wait_between_flash_st);
+  LedModel_GetCurrentState_ExpectAndReturn(wait_between_flash_st);
   LedConductor_Run();
 }
 
