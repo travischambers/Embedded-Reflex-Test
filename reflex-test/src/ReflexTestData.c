@@ -23,14 +23,18 @@ bool ReflexTestData_IsSequenceDone() {
 int32_t ReflexTestData_GetNextLedAndIncrement() {
 
   if (index < LEDMODEL_SEQUENCE_LENGTH) {
-   return sequence[index++];
+   return sequence[index];
   }
   else {
     return LEDMODEL_ERROR;
   }
 }
 
-i
+void ReflexTestData_IncrementIndex() {
+  if (index < LEDMODEL_SEQUENCE_LENGTH) {
+    index++;
+  }
+}
 
 void ReflexTestData_printSequence() {
   int i;

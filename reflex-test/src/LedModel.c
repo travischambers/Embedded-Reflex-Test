@@ -13,8 +13,12 @@ void LedModel_Init() {
 
 }
 
-int32_t LedModel_GetNextLedAndIncrement() {
-  return ReflexTestData_GetNextLedAndIncrement();
+int32_t LedModel_GetNextLed() {
+  return ReflexTestData_GetNextLed();
+}
+
+void LedModel_IncrementIndex() {
+  ReflexTestData_IncrementIndex();
 }
 
 bool LedModel_IsSequenceDone() {

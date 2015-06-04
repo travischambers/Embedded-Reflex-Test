@@ -34,7 +34,8 @@ void LedConductor_Run() {
     case wait_between_flash_st:
       break;
     case blink_led_st:
-      flashedLed = LedModel_GetNextLedAndIncrement();
+      flashedLed = LedModel_GetNextLed();
+      LedModel_IncrementIndex();
       LedHardware_Enable(flashedLed);
       break;
     case wait_for_button_st:
