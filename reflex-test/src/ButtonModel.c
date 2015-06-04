@@ -1,5 +1,4 @@
 #include "ButtonModel.h"
-#include "ReflexTestData.h"
 
 void ButtonModel_Init() {
 
@@ -17,4 +16,8 @@ void ButtonModel_SetPressedButton(int32_t value) {
 
 int32_t ButtonModel_GetPressedButton() {
   ReflexTestData_GetPressedButton();
+}
+
+reflexTest_st ButtonModel_GetCurrentState() {
+  return ReflexTestData_GetCurrentState();
 }

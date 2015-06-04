@@ -6,7 +6,6 @@
  */
 
 #include "LedModel.h"
-#include "ReflexTestData.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -20,4 +19,8 @@ int32_t LedModel_GetNextLed() {
 
 bool LedModel_IsSequenceDone() {
   return ReflexTestData_IsSequenceDone();
+}
+
+reflexTest_st LedModel_GetCurrentState() {
+  return ReflexTestData_GetCurrentState();
 }

@@ -17,4 +17,3 @@ int32_t ButtonHardware_Read() {
 
   return readButton;
 }
-

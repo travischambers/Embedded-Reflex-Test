@@ -2,6 +2,7 @@
 #define BUTTONMODEL_H_
 
 #include <stdint.h>
+#include "ReflexTestData.h"
 
 /**
  * Initialize ButtonModel variables in ReflexTestData if necessary
@@ -21,5 +22,11 @@ void ButtonModel_SetPressedButton(int32_t value);
  * @param time a value representing the elapsed time in seconds
  */
 void ButtonModel_SetResponseTime(double time);
+
+/**
+ * Called by the Conductor to get the current state from ReflexTestData
+ * @return  returns the current state
+ */
+reflexTest_st ButtonModel_GetCurrentState(void);
 
 #endif //BUTTONMODEL_H_
