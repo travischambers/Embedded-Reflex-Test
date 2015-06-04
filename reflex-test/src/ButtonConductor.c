@@ -3,12 +3,15 @@
 #include "ButtonModel.h"
 #include "buttons.h"
 
+#include "stdint.h"
 void ButtonConductor_Init() {
   ButtonModel_Init();
   ButtonHardware_Init();
 }
 
 void ButtonConductor_Run() {
+
+  int32_t pressedButton = 0;
 
   // state actions
   switch (ButtonModel_GetCurrentState()) {
@@ -17,8 +20,12 @@ void ButtonConductor_Run() {
     case show_info_st:
       break;
     case wait_info_st:
+      pressedButton = ButtonHardware_Read();
+      ButtonModel_SetPressedButton(pressedButton);
       break;
     case wait_five_seconds_st:
+      pressedButton = ButtonHardware_Read();
+      ButtonModel_SetPressedButton(pressedButton);
       break;
     case blank_screen_st:
       break;
@@ -27,6 +34,8 @@ void ButtonConductor_Run() {
     case blink_led_st:
       break;
     case wait_for_button_st:
+      pressedButton = ButtonHardware_Read();
+      ButtonModel_SetPressedButton(pressedButton);
       break;
     case button_pressed_st:
       break;
