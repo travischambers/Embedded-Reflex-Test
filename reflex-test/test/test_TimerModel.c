@@ -1,5 +1,5 @@
 #include "TimerModel.h"
-#include "mock_ReflexTestData.h"
+#include "ReflexTestData.h"
 
 void setup() {
 
@@ -12,7 +12,7 @@ void tearDown() {
 void testTimerModel_ShouldBeAbleToRecordResponseTimesAndCalculateCorrectly() {
   TimerModel_ClearOldStats();
   ReflexTestData_Init();
-  
+
   // Save a sequence of 10 "reponse times"
   TimerModel_RecordResponseTime(0.2);
   ReflexTestData_IncrementIndex(); // increment index
