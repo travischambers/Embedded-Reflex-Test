@@ -15,11 +15,18 @@ static int32_t index = 0;
 static int32_t pressedButton = 0;
 static double responseTime;
 static ReflexTest_st currentState = init_st;
+static double min = 5.0;
+static double max = 0.0;
+static double average = 0.0;
 
 void ReflexTestData_Init() {
   index = 0;
   pressedButton = 0;
   responseTime = 0.0;
+  min = 5.0;
+  max = 0.0;
+  average = 0.0;
+
   int i;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
     sequence[i] = 0;
@@ -102,4 +109,26 @@ void ReflexTestData_SetResponseTime(double inputTime) {
 
 double ReflexTestData_GetResponseTime() {
   return responseTime;
+}
+
+void ReflexTestData_SetMinResponseTime(double responseTime) {
+  min = responseTime;
+}
+
+double ReflexTestData_GetMinResponseTime() {
+  return min;
+}
+
+void ReflexTestData_SetMaxResponseTime(double responseTime) {
+  max = responseTime;
+}
+
+double ReflexTestData_GetMaxResponseTime() {
+  return max;
+}
+void ReflexTestData_SetAverageResponseTime(double responseTime) {
+  average = responseTime;
+}
+double ReflexTestData_GetAverageResponseTime() {
+  return average;
 }

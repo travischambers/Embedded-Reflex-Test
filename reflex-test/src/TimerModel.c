@@ -45,6 +45,11 @@ void TimerModel_CalculateStats() {
     runningTotal += times[i];
   }
   average = runningTotal/REFLEXTESTDATA_SEQUENCE_LENGTH;
+
+  ReflexTestData_SetMinResponseTime(min);
+  ReflexTestData_SetMaxResponseTime(max);
+  ReflexTestData_SetAverageResponseTime(average);
+
 }
 
 double TimerModel_GetMin() {

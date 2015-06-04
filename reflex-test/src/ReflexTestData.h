@@ -120,4 +120,41 @@ void ReflexTestData_SetReponseTime(double inputTime);
  */
 void ReflexTestData_updateScores();
 
+/**
+ * Sets the minimum response time.
+ * @param responseTime the minimum response time from the player's round.
+ */
+void ReflexTestData_SetMinResponseTime(double responseTime);
+
+/**
+ * The minimum response time from a player's round.
+ * @return The minimum response time from a player's round.
+ */
+double ReflexTestData_GetMinResponseTime();
+
+/**
+ * Sets the maximum response time.
+ * @param responseTime the maximum response time from the player's round.
+ */
+void ReflexTestData_SetMaxResponseTime(double responseTime);
+
+/**
+ * The maximum response time from a player's round.
+ * @return The maximum response time from a player's round.
+ */
+double ReflexTestData_GetMaxResponseTime();
+
+/**
+ * Sets the average response time.
+ * @param responseTime the average response time from the player's round.
+ */
+void ReflexTestData_SetAverageResponseTime(double responseTime);
+
+/**
+ * The average response time from a player's round.
+ * @return The average response time from a player's round.
+ */
+double ReflexTestData_GetAverageResponseTime();
+
+
 #endif /* REFLEXTESTDATA_H_ */
