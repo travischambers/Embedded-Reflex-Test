@@ -15,12 +15,15 @@ void LcdConductor_Init() {
 }
 
 void LcdConductor_Run() {
+  double average, min, max;
+  double* scores;
   // state actions
   switch (LcdModel_GetCurrentState()) {
     case init_st:
       break;
     case show_info_st:
-      LcdHardware_ShowInfo();
+      scores = LcdModel_GetHighScores();
+      LcdHardware_ShowInfo(scores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES);
       break;
     case wait_info_st:
       break;
@@ -38,9 +41,9 @@ void LcdConductor_Run() {
     case button_pressed_st:
       break;
     case show_stats_st:
-      double average = LcdModel_GetAverageResponseTime();
-      double min = LcdModel_GetMinResponseTime();
-      double max = LcdModel_GetMaxResponseTime();
+      average = LcdModel_GetAverageResponseTime();
+      min = LcdModel_GetMinResponseTime();
+      max = LcdModel_GetMaxResponseTime();
       LcdHardware_ShowStats(average, min, max);
       break;
     case wait_stats_st:

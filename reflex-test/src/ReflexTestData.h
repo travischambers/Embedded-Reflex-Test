@@ -14,6 +14,7 @@
 // Uncomment the line below to enable debug output.
 // #define REFLEXTESTDATA_DEBUG
 
+#define REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES 10
 #define REFLEXTESTDATA_ERROR -1
 #define REFLEXTESTDATA_SEQUENCE_LENGTH 10
 #define REFLEXTESTDATA_NUMBER_OF_LEDS 4
@@ -156,5 +157,10 @@ void ReflexTestData_SetAverageResponseTime(double responseTime);
  */
 double ReflexTestData_GetAverageResponseTime();
 
+/**
+ * The 10 highest scores since the board has been turned on.
+ * @return A pointer to the array containing 10 highest scores.
+ */
+double* ReflexTestData_GetHighScores();
 
 #endif /* REFLEXTESTDATA_H_ */

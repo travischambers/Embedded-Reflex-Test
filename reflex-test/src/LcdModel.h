@@ -36,4 +36,10 @@ double LcdModel_GetMinResponseTime();
  */
 double LcdModel_GetMaxResponseTime();
 
+/**
+ * The 10 highest scores since the board has been turned on.
+ * @return A pointer to the array containing 10 highest scores.
+ */
+double* LcdModel_GetHighScores();
+
 #endif /* LCDMODEL_H_ */

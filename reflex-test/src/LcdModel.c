@@ -26,3 +26,7 @@ double LcdModel_GetMinResponseTime() {
 double LcdModel_GetMaxResponseTime() {
   return ReflexTestData_GetMaxResponseTime();
 }
+
+double* LcdModel_GetHighScores() {
+  return ReflexTestData_GetHighScores();
+}

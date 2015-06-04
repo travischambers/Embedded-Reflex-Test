@@ -13,7 +13,8 @@ void testLcdConductor_InitShouldCallModelAndHardwareInit() {
 
 void testLcdConductor_DisplayInfoInShowInfoState(void) {
   LcdModel_GetCurrentState_ExpectAndReturn(show_info_st);
-  LcdHardware_ShowInfo_Expect();
+  LcdModel_GetHighScores_ExpectAndReturn(NULL);
+  LcdHardware_ShowInfo_Expect(NULL, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES);
   LcdConductor_Run();
 }
 
@@ -55,7 +56,10 @@ void testLcdConductor_DoNothingInButtonPressedState(void) {
 
 void testLcdConductor_DisplayStatsInShowStatsState(void) {
   LcdModel_GetCurrentState_ExpectAndReturn(show_stats_st);
-  LcdHardware_ShowStats_Expect();
+  LcdModel_GetAverageResponseTime_ExpectAndReturn(1.2345);
+  LcdModel_GetMinResponseTime_ExpectAndReturn(2.3456);
+  LcdModel_GetMaxResponseTime_ExpectAndReturn(3.4567);
+  LcdHardware_ShowStats_Expect(1.2345, 2.3456, 3.4567);
   LcdConductor_Run();
 }
 

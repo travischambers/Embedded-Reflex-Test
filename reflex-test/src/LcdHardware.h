@@ -8,16 +8,19 @@
 #ifndef LCDHARDWARE_H_
 #define LCDHARDWARE_H_
 
+#include <stdint.h>
+
 /**
  * Initializes the LCD display.
  */
 void LcdHardware_Init(void);
 
 /**
- * Prints out instructions, as well as the top 10 high scores
- * to the screen.
+ * Displays instructions and the past high scores to the user.
+ * @param highScores A pointer to the array of sorted high scores.
+ * @param length     The number of high scores in the array.
  */
-void LcdHardware_ShowInfo(void);
+void LcdHardware_ShowInfo(double* highScores, int32_t length);
 
 /**
  * Blanks the screen entirely.

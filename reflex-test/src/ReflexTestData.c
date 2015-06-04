@@ -18,6 +18,7 @@ static ReflexTest_st currentState = init_st;
 static double min = 5.0;
 static double max = 0.0;
 static double average = 0.0;
+static double highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES];
 
 void ReflexTestData_Init() {
   index = 0;
@@ -128,9 +129,15 @@ void ReflexTestData_SetMaxResponseTime(double responseTime) {
 double ReflexTestData_GetMaxResponseTime() {
   return max;
 }
+
 void ReflexTestData_SetAverageResponseTime(double responseTime) {
   average = responseTime;
 }
+
 double ReflexTestData_GetAverageResponseTime() {
   return average;
+}
+
+double* ReflexTestData_GetHighScores() {
+  return highScores;
 }
