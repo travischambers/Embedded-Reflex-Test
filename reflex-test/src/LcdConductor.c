@@ -20,12 +20,14 @@ void LcdConductor_Run() {
     case init_st:
       break;
     case show_info_st:
+      LcdHardware_ShowInfo();
       break;
     case wait_info_st:
       break;
     case wait_five_seconds_st:
       break;
     case blank_screen_st:
+      LcdHardware_BlankScreen();
       break;
     case wait_between_flash_st:
       break;
@@ -36,10 +38,12 @@ void LcdConductor_Run() {
     case button_pressed_st:
       break;
     case show_stats_st:
+      LcdHardware_ShowStats();
       break;
     case wait_stats_st:
       break;
     case update_scores_st:
+      LcdHardware_BlankScreen();
       break;
   }
 }

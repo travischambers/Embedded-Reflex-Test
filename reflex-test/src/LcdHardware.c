@@ -12,3 +12,13 @@ void LcdHardware_Init() {
   display_init();
 }
 
+void LcdHardware_ShowInfo(void) {
+
+}
+
+void LcdHardware_BlankScreen(void) {
+
+}
+void LcdHardware_ShowStats(void) {
+
+}

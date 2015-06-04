@@ -17,6 +17,6 @@
  }
 
  void testLcdModel_DisplayIgnoreMessage() {
-   TEST_IGNORE_MESSAGE( "This test is ignore because the Adafruit Touchscreen"
+   TEST_IGNORE_MESSAGE( "This test is ignored because the Adafruit Touchscreen"
                         " uses C++ support files, which are unsupported.");
  }
