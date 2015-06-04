@@ -45,7 +45,6 @@ void TimerModel_CalculateStats() {
     runningTotal += times[i];
   }
   average = runningTotal/REFLEXTESTDATA_SEQUENCE_LENGTH;
-  TimerModel_SetMostRecentResponseTime(average); //save it to the shared model
 }
 
 double TimerModel_GetMin() {
