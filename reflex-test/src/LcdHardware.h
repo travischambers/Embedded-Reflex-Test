@@ -25,9 +25,12 @@ void LcdHardware_ShowInfo(void);
 void LcdHardware_BlankScreen(void);
 
 /**
- * Displays the MIN, MAX, and AVERAGE reponse times
+ * Displays the MIN, MAX, and AVERAGE response times
  * from the last round to the user.
+ * @param average the average time the user took to respond that round
+ * @param min     the fastest time the player recorded that round
+ * @param max     the slowest time the player recorded that round
  */
-void LcdHardware_ShowStats(void);
+void LcdHardware_ShowStats(double average, double min, double max);
 
 #endif /* LCDHARDWARE_H_ */
