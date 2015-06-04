@@ -35,7 +35,7 @@ typedef enum reflexTest_st {
 } ReflexTest_st;
 
 /**
- * Initialization function. Not implemented.
+ * Initialization function. Should initialize the index, high scores, etc.
  */
 void ReflexTestData_Init(void);
 
