@@ -17,17 +17,17 @@ void LcdHardware_Init(void);
  * Prints out instructions, as well as the top 10 high scores
  * to the screen.
  */
-void LcdHardware_ShowInfo();
+void LcdHardware_ShowInfo(void);
 
 /**
  * Blanks the screen entirely.
  */
-void LcdHardware_BlankScreen();
+void LcdHardware_BlankScreen(void);
 
 /**
  * Displays the MIN, MAX, and AVERAGE reponse times
  * from the last round to the user.
  */
-void LcdHardware_ShowStats();
+void LcdHardware_ShowStats(void);
 
 #endif /* LCDHARDWARE_H_ */
