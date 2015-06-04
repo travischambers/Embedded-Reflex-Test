@@ -22,5 +22,6 @@ void testReflexTestData_InitShouldInitAllStateVariables() {
   TEST_ASSERT_EQUAL(0, ReflexTestData_GetResponseTime());
   TEST_ASSERT_EQUAL(0, ReflexTestData_GetPressedButton());
 
-  // TODO add test for the sequence  
+  // NOTE: Sequence cannot be directly tested, but if the above worked,
+  // the sequence will have been cleared as well.
 }
