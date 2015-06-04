@@ -46,6 +46,10 @@ void ReflexTestData_IncrementIndex() {
   }
 }
 
+int32_t ReflexTestData_GetCurrentIndex() {
+  return index;
+}
+
 void ReflexTestData_printSequence() {
   int i;
   printf("{");

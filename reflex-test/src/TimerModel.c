@@ -60,11 +60,10 @@ double TimerModel_GetAverage() {
 }
 
 void TimerModel_RecordResponseTime(double responseTime) {
-  static int32_t index = 0;
+  int32_t index = ReflexTestData_GetCurrentIndex();
 
   if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
     times[index] = responseTime;
-    index++;
   }
 
   TimerModel_SetMostRecentResponseTime(responseTime); //save it to the shared model

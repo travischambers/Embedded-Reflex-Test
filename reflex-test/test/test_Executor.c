@@ -17,6 +17,7 @@ void testInitShouldCallInitOfAllConductors(void) {
   LedConductor_Init_Expect();
   LcdConductor_Init_Expect();
   TimerConductor_Init_Expect();
+  ReflexTestData_Init_Expect();
 
   Executor_Init();
 }

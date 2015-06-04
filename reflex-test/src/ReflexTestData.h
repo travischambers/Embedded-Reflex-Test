@@ -73,6 +73,12 @@ int32_t ReflexTestData_GetNextLed(void);
 void ReflexTestData_IncrementIndex();
 
 /**
+ * Returns the current index of the sequence.
+ * @return The current index of the sequence.
+ */
+int32_t ReflexTestData_GetCurrentIndex();
+
+/**
  * Checks to see if entire sequence has already been shown. Used by LED Model.
  * @return  TRUE if the sequence is over.
  */
