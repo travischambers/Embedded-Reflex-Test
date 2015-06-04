@@ -140,8 +140,8 @@ void Executor_Init(void) {
   //call init on each of the conductors
   ButtonConductor_Init();
   LedConductor_Init();
-  LcdConductor_Init();
   TimerConductor_Init();
+  LcdConductor_Init();
   ReflexTestData_Init();
 }
 
@@ -150,8 +150,8 @@ bool Executor_Run(void) {
   //state actions first
   ButtonConductor_Run();
   LedConductor_Run();
-  LcdConductor_Run();
   TimerConductor_Run();
+  LcdConductor_Run();
 
   //state update next
   ReflexTest_st nextState = ReflexTest_TickFunction(ReflexTestData_GetCurrentState());
