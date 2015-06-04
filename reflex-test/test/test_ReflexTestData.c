@@ -14,6 +14,9 @@ void testReflexTestData_InitShouldInitAllStateVariables() {
   ReflexTestData_GenerateSequence(123);
   ReflexTestData_SetPressedButton(0x4);
   ReflexTestData_SetCurrentState(show_info_st);
+  ReflexTestData_SetMaxResponseTime(0.345);
+  ReflexTestData_SetMinResponseTime(0.002);
+  ReflexTestData_SetAverageResponseTime(0.123);
 
   // Call Init
   ReflexTestData_Init();
@@ -22,6 +25,9 @@ void testReflexTestData_InitShouldInitAllStateVariables() {
   TEST_ASSERT_EQUAL(0, ReflexTestData_GetCurrentIndex());
   TEST_ASSERT_EQUAL(0, ReflexTestData_GetResponseTime());
   TEST_ASSERT_EQUAL(0, ReflexTestData_GetPressedButton());
+  TEST_ASSERT_EQUAL(0, ReflexTestData_GetMaxResponseTime());
+  TEST_ASSERT_EQUAL(5, ReflexTestData_GetMinResponseTime());
+  TEST_ASSERT_EQUAL(0, ReflexTestData_GetAverageResponseTime());
   TEST_ASSERT_EQUAL(init_st, ReflexTestData_GetCurrentState());
 
   // NOTE: Sequence cannot be directly tested, but if the above worked,
