@@ -97,4 +97,9 @@ void ReflexTestData_SetPressedButton(int32_t value);
  */
 double ReflexTestData_GetResponseTime(void);
 
+/**
+ * Updates the high scores list.
+ */
+void ReflexTestData_updateScores();
+
 #endif /* REFLEXTESTDATA_H_ */
