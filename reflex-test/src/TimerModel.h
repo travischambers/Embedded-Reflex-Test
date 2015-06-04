@@ -18,4 +18,10 @@ void TimerModel_Init(void);
  */
 ReflexTest_st TimerModel_GetCurrentState(void);
 
+/**
+ * Sets the most recent response time in ReflexTestData to the parameter.
+ * @param responseTime The response time value to save.
+ */
+void TimerModel_SetResponseTime(double responseTime);
+
 #endif /* TIMERMODEL_H_ */

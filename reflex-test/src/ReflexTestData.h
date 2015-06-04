@@ -99,6 +99,12 @@ void ReflexTestData_SetPressedButton(int32_t value);
 double ReflexTestData_GetResponseTime(void);
 
 /**
+ * Saves the passed-in reponse time as the most recent response.
+ * @param responseTime The value to store as the most recent response.
+ */
+void ReflexTestData_SetReponseTime(double responseTime);
+
+/**
  * Updates the high scores list.
  */
 void ReflexTestData_updateScores();

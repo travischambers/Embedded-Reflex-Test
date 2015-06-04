@@ -27,3 +27,7 @@ void TimerHardware_StopTimer() {
 void TimerHardware_StartTimer() {
   intervalTimer_start(INTERVALTIMER_TIMER0);
 }
+
+void TimerHardware_ResetTimer(void) {
+  intervalTimer_reset(INTERVALTIMER_TIMER0);
+}
