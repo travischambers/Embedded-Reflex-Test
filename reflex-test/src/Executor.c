@@ -15,10 +15,59 @@ void Executor_Init(void) {
 
 bool Executor_Run(void) {
 
+  //state actions first
   ButtonConductor_Run();
   LedConductor_Run();
   LcdConductor_Run();
   TimerConductor_Run();
 
+  //state update next
+  ReflexTestData_SetCurrentState(ReflexTest_tick_Function(ReflexTestData_GetCurrentState()));
   return true;
+}
+
+reflexTest_st ReflexTest_tick_Function(reflexTest_st currentState) {
+
+  // state actions
+  switch (currentState) {
+    case init_st:
+      break;
+    case show_info_st:
+      break;
+    case wait_five_seconds_st:
+      break;
+    case wait_between_flash_st:
+      break;
+    case blink_led_st:
+      break;
+    case wait_for_button_st:
+      break;
+    case show_stats_st:
+      break;
+    case update_scores_st:
+      break;
+  }
+
+   // state update
+  switch (currentState) {
+    case init_st:
+      //
+      break;
+    case show_info_st:
+      break;
+    case wait_five_seconds_st:
+      break;
+    case wait_between_flash_st:
+      break;
+    case blink_led_st:
+      break;
+    case wait_for_button_st:
+      break;
+    case show_stats_st:
+      break;
+    case update_scores_st:
+      break;
+  }
+
+  return currentState;
 }

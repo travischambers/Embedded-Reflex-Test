@@ -18,7 +18,25 @@
 #define LEDMODEL_SEQUENCE_LENGTH 10
 #define LEDMODEL_NUMBER_OF_LEDS 4
 
+
 void ReflexTestData_Init(void);
+
+//state machine
+enum reflexTest_st {
+  init_st,               // init state
+  show_info_st,          // display instructions on the lcd
+  wait_five_seconds_st,  // wait_five_seconds before blinking an led
+  blink_led_st,          // blink an led
+  wait_for_button_st,    // wait for the user to press a button
+  wait_between_flash_st, // wait one second
+  show_stats_st,         // show user's fastest, slowest, and average time
+  update_scores_st,      // compute average and rank score
+};
+
+void ReflexTestData_SetCurrentState(reflexTest_st newState);
+reflexTest_st ReflexTestData_GetCurrentState(void);
+
+
 
 uint32_t* ReflexTestData_GenerateSequence(int32_t seed);
 

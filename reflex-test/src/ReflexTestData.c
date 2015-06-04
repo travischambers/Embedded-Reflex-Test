@@ -14,7 +14,7 @@ static uint32_t sequence[LEDMODEL_SEQUENCE_LENGTH];
 static int32_t index = 0;
 static int32_t pressedButton = 0;
 static double responseTime;
-
+static reflexTest_st currentState = init_st;
 
 bool ReflexTestData_IsSequenceDone() {
   return (index == (LEDMODEL_SEQUENCE_LENGTH));
@@ -62,4 +62,12 @@ int32_t ReflexTestData_GetPressedButton() {
 
 void ReflexTestData_SetPressedButton(int32_t value) {
   pressedButton = value;
+}
+
+void ReflexTestData_SetCurrentState(reflexTest_st newState) {
+  currentState = newState;
+}
+
+reflexTest_st ReflexTestData_GetCurrentState() {
+  return currentState;
 }
