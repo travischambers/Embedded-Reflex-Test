@@ -109,7 +109,7 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
 
       // Get a flash wait time between 1 and 3 seconds.
       // e.g. v3 = rand() % 30 + 1985;  <-- v3 in the range 1985-2014
-      flashWait = (rand() % TWO_SECOND_WAIT) + ONE_SECOND_WAIT
+      flashWait = (rand() % TWO_SECOND_WAIT) + ONE_SECOND_WAIT;
 
       // Wait here for flashWait and then blink LED if we're not finished
       if (flashTimer >= flashWait && !ReflexTestData_IsSequenceDone()) {
