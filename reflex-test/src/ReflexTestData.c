@@ -38,7 +38,7 @@ bool ReflexTestData_IsSequenceDone() {
   return (index == (REFLEXTESTDATA_SEQUENCE_LENGTH));
 }
 
-int32_t ReflexTestData_GetNextLedAndIncrement() {
+int32_t ReflexTestData_GetNextLed() {
 
   if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
    return sequence[index];

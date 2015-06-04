@@ -59,5 +59,12 @@ void testReflexTestData_IncrementIndexShouldOnlyIncrementToTotalLength() {
   }
 
   TEST_ASSERT_EQUAL(REFLEXTESTDATA_SEQUENCE_LENGTH-1, ReflexTestData_GetCurrentIndex());
+}
 
+void testReflextTestData_GetNextLEDShouldReturnNextLEDOfSequence() {
+  // Generate a sequence of:
+  // {1, 1, 1, 2, 3, 3, 3, 2, 2, 1};
+  ReflexTestData_GenerateSequence(123);
+
+  TEST_ASSERT_EQUAL(1, ReflexTestData_GetNextLed());
 }
