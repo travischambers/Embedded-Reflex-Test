@@ -83,8 +83,7 @@ void testTimerConductor_CalculateStatesAndProvideInfoInShowStatsState(void) {
   TimerModel_GetMin_ExpectAndReturn(0.098);
   TimerModel_GetMax_ExpectAndReturn(0.612);
   TimerModel_GetAverage_ExpectAndReturn(0.123);
-  double average = TimerModel_GetAverage_ExpectAndReturn(0.123);
-  TimerModel_SetMostRecentResponseTime_Expect(average);
+  TimerModel_SetMostRecentResponseTime_Expect(0.123);
   TimerConductor_Run();
 }
 

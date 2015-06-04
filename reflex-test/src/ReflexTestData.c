@@ -10,28 +10,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-static uint32_t sequence[LEDMODEL_SEQUENCE_LENGTH];
+static uint32_t sequence[REFLEXTESTDATA_SEQUENCE_LENGTH];
 static int32_t index = 0;
 static int32_t pressedButton = 0;
 static double responseTime;
 static ReflexTest_st currentState = init_st;
 
 bool ReflexTestData_IsSequenceDone() {
-  return (index == (LEDMODEL_SEQUENCE_LENGTH));
+  return (index == (REFLEXTESTDATA_SEQUENCE_LENGTH));
 }
 
 int32_t ReflexTestData_GetNextLedAndIncrement() {
 
-  if (index < LEDMODEL_SEQUENCE_LENGTH) {
+  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
    return sequence[index];
   }
   else {
-    return LEDMODEL_ERROR;
+    return REFLEXTESTDATA_ERROR;
   }
 }
 
 void ReflexTestData_IncrementIndex() {
-  if (index < LEDMODEL_SEQUENCE_LENGTH) {
+  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
     index++;
   }
 }
@@ -39,10 +39,10 @@ void ReflexTestData_IncrementIndex() {
 void ReflexTestData_printSequence() {
   int i;
   printf("{");
-  for (i = 0; i < LEDMODEL_SEQUENCE_LENGTH-1; i++) {
+  for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH-1; i++) {
     printf("%lu, ", sequence[i]);
   }
-  printf("%lu};\n", sequence[LEDMODEL_SEQUENCE_LENGTH-1]);
+  printf("%lu};\n", sequence[REFLEXTESTDATA_SEQUENCE_LENGTH-1]);
 }
 
 uint32_t* ReflexTestData_GenerateSequence(int32_t seed) {
@@ -51,8 +51,8 @@ uint32_t* ReflexTestData_GenerateSequence(int32_t seed) {
 
   srand(seed); //initialize random number generator
   int i;
-  for (i = 0; i < LEDMODEL_SEQUENCE_LENGTH; i++) {
-    sequence[i] = rand() % LEDMODEL_NUMBER_OF_LEDS;
+  for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
+    sequence[i] = rand() % REFLEXTESTDATA_NUMBER_OF_LEDS;
   }
 
 #ifdef REFLEXTESTDATA_DEBUG
