@@ -62,7 +62,9 @@ ReflexTest_st ReflexTest_tick_Function(ReflexTest_st currentState) {
       currentState = wait_info_st;
       break;
     case wait_five_seconds_st:
-      if (fiveSecondTimer > )
+      if (fiveSecondTimer >= FIVE_SECOND_WAIT ) {
+
+      }
       break;
     case wait_between_flash_st:
       break;

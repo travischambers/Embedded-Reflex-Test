@@ -79,6 +79,12 @@ bool ReflexTestData_IsSequenceDone(void);
 int32_t ReflexTestData_GetPressedButton(void);
 
 /**
+ * Returns true if a button is currently pressed.
+ * @return  TRUE if a button is currently being pressed.
+ */
+bool ReflexTestData_isButtonPressed(void);
+
+/**
  * Sets the value of the pressed button. Used by the button model.
  * @param value The value to set the pressed button to.
  */
