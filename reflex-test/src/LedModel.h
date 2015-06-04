@@ -12,9 +12,16 @@
 #include <stdint.h>
 #include <stdbool.h>
 
+/**
+ * Initialization function for the LED Model.
+ */
 void LedModel_Init();
-int32_t LedModel_GetNextLed();
-bool LedModel_IsSequenceDone(void);
+
+/**
+ * Returns the next LED to flash in the sequence.
+ * @return The number of the LED to flash next.
+ */
+int32_t LedModel_GetNextLedAndIncrement();
 
 /**
  * Called by the Conductor to get the current state from ReflexTestData

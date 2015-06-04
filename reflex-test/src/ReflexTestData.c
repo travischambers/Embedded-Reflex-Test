@@ -20,7 +20,7 @@ bool ReflexTestData_IsSequenceDone() {
   return (index == (LEDMODEL_SEQUENCE_LENGTH));
 }
 
-int32_t ReflexTestData_GetNextLed() {
+int32_t ReflexTestData_GetNextLedAndIncrement() {
 
   if (index < LEDMODEL_SEQUENCE_LENGTH) {
    return sequence[index++];

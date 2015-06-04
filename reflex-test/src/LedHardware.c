@@ -20,6 +20,11 @@ void LedHardware_Init() {
   printf("%ld\n", ledValue);
 
 }
-void LedHardware_Flash(int32_t ledNumber) {
+
+void LedHardware_Enable(int32_t ledNumber) {
   leds_write((int)ledNumber);
+}
+
+void LedHardware_BlankAllLeds() {
+  // Turn off all of the LEDs
 }
