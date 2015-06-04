@@ -33,7 +33,7 @@ void TimerModel_SetMostRecentResponseTime(double responseTime);
 void TimerModel_RecordResponseTime(double responseTime);
 
 /**
- * Deletes all te stats from the previous run to be ready for the new round.
+ * Deletes all the stats from the previous run to be ready for the new round.
  */
 void TimerModel_ClearOldStats();
 
