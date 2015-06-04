@@ -27,7 +27,7 @@ void TimerModel_SetResponseTime(double responseTime);
 /**
  * Deletes all te stats from the previous run to be ready for the new round.
  */
-void TimerModel_ClearOldStates();
+void TimerModel_ClearOldStats();
 
 /**
  * Calculates the MIN, MAX, and AVERAGE for this run of the reflex test.
