@@ -107,7 +107,7 @@ double ReflexTestData_GetResponseTime(void);
  * Saves the passed-in reponse time as the most recent response.
  * @param responseTime The value to store as the most recent response.
  */
-void ReflexTestData_SetReponseTime(double responseTime);
+void ReflexTestData_SetReponseTime(double inputTime);
 
 /**
  * Updates the high scores list.

@@ -16,6 +16,10 @@ static int32_t pressedButton = 0;
 static double responseTime;
 static ReflexTest_st currentState = init_st;
 
+void ReflexTestData_Init() {
+
+}
+
 bool ReflexTestData_IsSequenceDone() {
   return (index == (REFLEXTESTDATA_SEQUENCE_LENGTH));
 }
@@ -80,4 +84,12 @@ ReflexTest_st ReflexTestData_GetCurrentState() {
 
 bool ReflexTestData_IsCorrectButtonPressed() {
   return (pressedButton == sequence[index]);
+}
+
+void ReflexTestData_SetResponseTime(double inputTime) {
+  responseTime = inputTime;
+}
+
+double ReflexTestData_GetResponseTime() {
+  return responseTime;
 }
