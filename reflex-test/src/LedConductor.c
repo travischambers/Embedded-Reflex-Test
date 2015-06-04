@@ -17,6 +17,8 @@ void LedConductor_Init() {
 }
 
 void LedConductor_Run() {
+
+  int32_t flashedLed = 0;
   // state actions
   switch (LedModel_GetCurrentState()) {
     case init_st:
@@ -32,10 +34,13 @@ void LedConductor_Run() {
     case wait_between_flash_st:
       break;
     case blink_led_st:
+      flashedLed = LedModel_GetNextLedAndIncrement();
+      LedHardware_Enable(flashedLed);
       break;
     case wait_for_button_st:
       break;
     case button_pressed_st:
+      LedHardware_BlankAllLeds();
       break;
     case show_stats_st:
       break;
