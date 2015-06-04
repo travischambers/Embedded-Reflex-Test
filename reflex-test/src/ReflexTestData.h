@@ -43,7 +43,7 @@ void ReflexTestData_Init(void);
  * Sets the current state to the parameter passed in.
  * @param newState The Reflex Data state to set the currentState to.
  */
-void ReflexTestData_SetCurrentState(reflexTest_st newState);
+void ReflexTestData_SetCurrentState(ReflexTest_st newState);
 
 /**
  * Returns the current state.
