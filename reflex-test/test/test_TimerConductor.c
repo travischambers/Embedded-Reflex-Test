@@ -42,11 +42,12 @@ void testTimerConductor_ShouldDoNothingInWaitFiveSecState(void) {
   TimerConductor_Run();
 }
 
-void testTimerConductor_StopTimerInBlankScreenState(void) {
+void testTimerConductor_StopTimerInBlankScreenAndClearStatsState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(blank_screen_st);
   TimerHardware_StopTimer_Expect();
   TimerHardware_GetResponseTime_ExpectAndReturn(8.88);
   TimerModel_SetResponseTime_Expect(8.88);
+  TimerModel_ClearOldStats_Expect();
   TimerConductor_Run();
 }
 
@@ -58,7 +59,7 @@ void testTimerConductor_ShouldDoNothingInWaitBetweenFlashState(void) {
 void testTimerConductor_TurnOnTheTimerInBlinkLEDState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(blink_ledr_st);
   TimerHardware_ResetTimer_Expect();
-  TimerHardware_Enable_Expect(0x1);
+  TimerHardware_StartTimer_Expect();
   TimerConductor_Run();
 }
 
@@ -69,12 +70,18 @@ void testTimerConductor_ShouldDoNothingInWaitForButtonState(void) {
 
 void testTimerConductor_TurnOffTheTimerInButtonPressedState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(button_pressed_st);
-  TimerHardware_BlankAllTimers_Expect();
+  TimerHardware_StopTimer_Expect();
+  TimerHardware_GetResponseTime_ExpectAndReturn(8.88);
+  TimerModel_SetResponseTime_Expect(8.88);
   TimerConductor_Run();
 }
 
-void testTimerConductor_ShouldDoNothingInShowStatsState(void) {
+void testTimerConductor_CalculateStatesAndProvideInfoInShowStatsState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(show_stats_st);
+  TimerModel_CalculateStats_Expect();
+  TimerModel_GetMin_ExpectAndReturn(0.098);
+  TimerModel_GetMax_ExpectAndReturn(0.612);
+  TimerModel_GetAverage_ExpectAndReturn(0.123);
   TimerConductor_Run();
 }
 
