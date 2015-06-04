@@ -57,7 +57,7 @@ void testTimerConductor_ShouldDoNothingInWaitBetweenFlashState(void) {
 }
 
 void testTimerConductor_TurnOnTheTimerInBlinkLEDState(void) {
-  TimerModel_GetCurrentState_ExpectAndReturn(blink_ledr_st);
+  TimerModel_GetCurrentState_ExpectAndReturn(blink_led_st);
   TimerHardware_ResetTimer_Expect();
   TimerHardware_StartTimer_Expect();
   TimerConductor_Run();
