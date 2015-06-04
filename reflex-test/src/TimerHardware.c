@@ -15,7 +15,7 @@ void TimerHardware_Init() {
 }
 
 double TimerHardware_GetResponseTime() {
-    double responseTime;
+    double responseTime = 0;
     intervalTimer_getTotalDurationInSeconds(INTERVALTIMER_TIMER0, &responseTime);
     return responseTime;
 }

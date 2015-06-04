@@ -22,8 +22,7 @@ void testButtonConductor_InitShouldCallModelAndHardwareInit(void) {
 
 void testButtonConductor_RunShouldMakeButtonsListenForPresses(void) {
 
-  ButtonHardware_Read_ExpectAndReturn(0x0);
-  ButtonModel_SetPressedButton_Expect(0x0);
+  ButtonModel_GetCurrentState_ExpectAndReturn(init_st);
 
   ButtonConductor_Run();
 }

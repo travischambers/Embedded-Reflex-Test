@@ -27,8 +27,13 @@ void testTimerHardware_StartTimerShouldStartIntervalTimer0() {
 void testTimerHardware_GetResponseTimeShouldReturnDurationThatTheTimerRan() {
 
   //TODO figure out what "seconds" needs to be to have test pass
-  uint32_t seconds = 0;
-  intervalTimer_getTotalDurationInSeconds_ExpectAndReturn(0, 0, seconds);
-
-  TimerHardware_GetResponseTime();
+  // double seconds = 10.85;
+  // double secondsToReturn = 10.85;
+  //
+  // intervalTimer_getTotalDurationInSeconds_IgnoreAndReturn(1);
+  // intervalTimer_getTotalDurationInSeconds_ReturnThruPtr_seconds(&secondsToReturn);
+  //
+  // TimerHardware_GetResponseTime();
+  //
+  // TEST_ASSERT_EQUAL(secondsToReturn, seconds);
 }

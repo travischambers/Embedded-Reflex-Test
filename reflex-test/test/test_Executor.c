@@ -22,10 +22,13 @@ void testInitShouldCallInitOfAllConductors(void) {
 }
 
 void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
+
   ButtonConductor_Run_Expect();
   LedConductor_Run_Expect();
   LcdConductor_Run_Expect();
   TimerConductor_Run_Expect();
+  ReflexTestData_GetCurrentState_ExpectAndReturn(init_st);
+  ReflexTestData_SetCurrentState_Expect(show_info_st);
 
   TEST_ASSERT_EQUAL(true, Executor_Run());
 }

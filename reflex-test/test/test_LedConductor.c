@@ -19,15 +19,9 @@ void testInitShouldCallModelAndHardwareInit() {
   LedConductor_Init();
 }
 
-void testLedConductor_RunShouldFlashNextLedInSequence() {
+void testLedConductor_RunShouldDriveStateMachine() {
 
-  LedModel_IsSequenceDone_ExpectAndReturn(false);
-  LedModel_GetNextLed_ExpectAndReturn(1);
-  LedHardware_Flash_Expect(1);
-
-  LedConductor_Run();
-
-  LedModel_IsSequenceDone_ExpectAndReturn(true);
+  LedModel_GetCurrentState_ExpectAndReturn(init_st);
 
   LedConductor_Run();
 }
