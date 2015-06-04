@@ -18,13 +18,6 @@ void testTimerConductorInitShouldCallHardwareInitAndModelInit() {
   TimerConductor_Init();
 }
 
-void testTimerConductor_InitShouldCallModelAndHardwareInit(void) {
-  TimerModel_Init_Expect();
-  TimerHardware_Init_Expect();
-
-  TimerConductor_Init();
-}
-
 void testTimerConductor_ResetAndStartTimerInShowInfoState(void) {
   TimerModel_GetCurrentState_ExpectAndReturn(show_info_st);
   TimerHardware_ResetTimer_Expect();
