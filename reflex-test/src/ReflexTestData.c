@@ -17,7 +17,13 @@ static double responseTime;
 static ReflexTest_st currentState = init_st;
 
 void ReflexTestData_Init() {
-
+  index = 0;
+  pressedButton = 0;
+  responseTime = 0.0;
+  int i;
+  for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
+    sequence[i] = 0;
+  }
 }
 
 bool ReflexTestData_IsSequenceDone() {
