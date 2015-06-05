@@ -21,7 +21,7 @@ void ButtonModel_SetPressedButton(int32_t value) {
     case BUTTONS_BTN2_MASK:
       value = 3;
       break;
-    case BUTTONS_BTN4_MASK:
+    case BUTTONS_BTN3_MASK:
       value = 4;
       break;
   }
