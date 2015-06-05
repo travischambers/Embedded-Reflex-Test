@@ -76,7 +76,8 @@ uint32_t* ReflexTestData_GenerateSequence(int32_t seed) {
   srand(seed); //initialize random number generator
   int i;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
-    sequence[i] = rand() % REFLEXTESTDATA_NUMBER_OF_LEDS;
+    // Generate values between 1-4
+    sequence[i] = (rand() % REFLEXTESTDATA_NUMBER_OF_LEDS) + 1;
   }
 
 #ifdef REFLEXTESTDATA_DEBUG

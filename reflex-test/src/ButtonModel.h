@@ -4,6 +4,11 @@
 #include <stdint.h>
 #include "ReflexTestData.h"
 
+#define BUTTONS_BTN0_MASK       0x1
+#define BUTTONS_BTN1_MASK       0x2
+#define BUTTONS_BTN2_MASK       0x4
+#define BUTTONS_BTN3_MASK       0x8
+
 /**
  * Initialize ButtonModel variables in ReflexTestData if necessary
  */
