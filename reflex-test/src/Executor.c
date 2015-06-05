@@ -185,7 +185,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
     case button_pressed_st:
       // Get a flash wait time between 2 and 4 seconds.
       // e.g. v3 = rand() % 30 + 1985;  <-- v3 in the range 1985-2014
-      flashWait = (rand() % TWO_SECOND_WAIT) + TWO_SECOND_WAIT;
+      flashWait = (rand() % TWO_SECOND_WAIT) + ONE_SECOND_WAIT;
       currentState = wait_between_flash_st;
       break;
     case show_stats_st:
@@ -218,8 +218,9 @@ bool Executor_Run(void) {
 
   //state actions first
   ButtonConductor_Run();
-  LedConductor_Run();
   TimerConductor_Run();
+  // LED must come after Timer_Run()
+  LedConductor_Run();
   LcdConductor_Run();
 
   //state update next

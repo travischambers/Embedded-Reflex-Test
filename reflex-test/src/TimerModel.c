@@ -6,6 +6,7 @@
  */
 
 #include "TimerModel.h"
+#include <stdio.h>
 
 #define MAX_INITIAL_VALUE 5.000 //initialized to slowest possible time
 #define MIN_INITIAL_VALUE 0.000 //initialized to fastest possible time
@@ -22,6 +23,18 @@ ReflexTest_st TimerModel_GetCurrentState() {
   return ReflexTestData_GetCurrentState();
 }
 
+/**
+ * Helper function to show the contents of the response time array
+ */
+void TimerModel_printStatsArray() {
+  int i;
+  printf("{");
+  for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH-1; i++) {
+    printf("%lf, ", times[i]);
+  }
+  printf("%lf}\n", times[REFLEXTESTDATA_SEQUENCE_LENGTH-1]);
+}
+
 void TimerModel_ClearOldStats() {
   min = MAX_INITIAL_VALUE;
   max = MIN_INITIAL_VALUE;
@@ -33,6 +46,7 @@ void TimerModel_ClearOldStats() {
 }
 
 void TimerModel_CalculateStats() {
+  TimerModel_printStatsArray();
   int i;
   double runningTotal = 0;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {

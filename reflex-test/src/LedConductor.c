@@ -27,6 +27,7 @@ void LedConductor_Run() {
       LedHardware_BlankAllLeds();
       break;
     case wait_info_st:
+      LedHardware_BlankAllLeds();
       break;
     case wait_five_seconds_st:
       break;
