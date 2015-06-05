@@ -27,4 +27,5 @@ void LedHardware_Enable(int32_t ledNumber) {
 
 void LedHardware_BlankAllLeds() {
   // Turn off all of the LEDs
+  leds_write(0x0);
 }
