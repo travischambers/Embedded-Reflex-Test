@@ -20,7 +20,7 @@ void LcdHardware_Init(void);
  * @param highScores A pointer to the array of sorted high scores.
  * @param length     The number of high scores in the array.
  */
-void LcdHardware_ShowInfo(double* highScores, int32_t length);
+void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore);
 
 /**
  * Blanks the screen entirely.

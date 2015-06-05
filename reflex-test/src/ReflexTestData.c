@@ -32,6 +32,7 @@ void ReflexTestData_Init() {
   int i;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
     sequence[i] = 0;
+    highScores[i] = 5.0;  // initialize high scores to slow values
   }
 }
 
@@ -159,7 +160,7 @@ int compare_function(const void *a,const void *b) {
 
 void ReflexTestData_UpdateScores() {
 
-  if (highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] < average) {
+  if (highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] > average) {
     highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] = average;
     qsort(highScores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, sizeof(double), compare_function);
   }

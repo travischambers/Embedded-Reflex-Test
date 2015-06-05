@@ -23,7 +23,8 @@ void LcdConductor_Run() {
       break;
     case show_info_st:
       scores = LcdModel_GetHighScores();
-      LcdHardware_ShowInfo(scores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES);
+      average = LcdModel_GetAverageResponseTime();
+      LcdHardware_ShowInfo(scores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, average);
       break;
     case wait_info_st:
       break;

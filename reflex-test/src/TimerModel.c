@@ -46,7 +46,7 @@ void TimerModel_ClearOldStats() {
 }
 
 void TimerModel_CalculateStats() {
-  TimerModel_printStatsArray();
+  //TimerModel_printStatsArray();
   int i;
   double runningTotal = 0;
   for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
