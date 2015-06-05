@@ -4,13 +4,71 @@
 #include "TimerConductor.h"
 #include "LcdConductor.h"
 #include <stdlib.h>
+#include <stdio.h>
 
 #define TICK_PERIOD       1                       // 1ms tick period
 #define FIVE_SECOND_WAIT  (5000 / (TICK_PERIOD))  // 5000ms = 5s
 #define TWO_SECOND_WAIT   (2000 / (TICK_PERIOD))
 #define ONE_SECOND_WAIT   (1000 / (TICK_PERIOD))
 
+/**
+ * This function will print the current state of the SM.
+ */
+void verboseStatePrint(ReflexTest_st currentState) {
+  static ReflexTest_st previousState;
+  static bool firstPass = true;
+  // Only print the message if:
+  // 1. This the first pass and the value for previousState is unknown.
+  // 2. previousState != currentState - this prevents reprinting the same stat.
+  if (previousState != currentState || firstPass) {
+    firstPass = false;     // previousState will be defined, firstPass is false.
+    previousState = currentState; // keep track of the last state you were in.
+    switch(currentState) {  // prints info based on the state that you're in.
+      case init_st:
+        printf("init_st\n\r");
+        break;
+      case show_info_st:
+        printf("show_info_st\n\r");
+        break;
+      case wait_info_st:
+        printf("wait_info_st\n\r");
+        break;
+      case wait_five_seconds_st:
+        printf("wait_five_seconds_st\n\r");
+        break;
+      case blank_screen_st:
+        printf("blank_screen_st\n\r");
+        break;
+      case blink_led_st:
+        printf("blink_led_st\n\r");
+        break;
+      case wait_for_button_st:
+        printf("wait_for_button_st\n\r");
+        break;
+      case button_pressed_st:
+        printf("button_pressed_st\n\r");
+        break;
+      case wait_between_flash_st:
+        printf("wait_between_flash_st\n\r");
+        break;
+      case show_stats_st:
+        printf("show_stats_st\n\r");
+        break;
+      case wait_stats_st:
+        printf("wait_stats_st\n\r");
+        break;
+      case update_scores_st:
+        printf("update_scores_st\n\r");
+        break;
+      default:
+        printf("Shouldn't have hit this default case\n");
+        break;
+     }
+  }
+}
+
 ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
+  verboseStatePrint(currentState);
   static uint32_t fiveSecondTimer = 0;
   static uint32_t flashTimer = 0;
   static uint32_t flashWait = 0;  // value for randomized flash wait

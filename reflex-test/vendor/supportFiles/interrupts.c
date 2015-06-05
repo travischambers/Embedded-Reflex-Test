@@ -26,7 +26,6 @@
 
 // ****************** These #defines enable/disable certain functionality ********************************
 
-#define INTERRUPTS_ENABLE_HEARTBEAT_LED     // Comment out to disable the LED heart beat.
 #define HEARTBEAT_TOGGLES_PER_SECOND 8     // How many times the LED LD4 heartbeat toggle off and on per second.
 #define INTERRUPTS_ENABLE_ADC_DATA_CAPTURE  // Comment out to disable ADC sample capture to queue.
 
@@ -158,17 +157,6 @@ static bool initGicFlag = false;
 // Assumes that you are connected to auxiliary port 14.
 #define XADC_AUX_CHANNEL_14 XSM_CH_AUX_MAX-1
 
-// Implements a 1-second pulse on LED3 to see if things are still alive.
-void updateHeartBeatLed() {
-  if (!heartBeatTimer) {
-	heartBeatTimer = privateTimerTicksPerHeartbeat;  // Reset the heart beat timer.
-	ledValue = ledValue == 0 ? 1 : 0;             // Toggle the LED on and off.
-	leds_writeLd4(ledValue);
-  } else {
-	heartBeatTimer--;
-  }
-}
-
 // Default xSysMon ISR just clears the interrupt.
 // Watch out, the code currently indiscriminately clears out all interrupts from the XADC.
 void sysMonIsr(void *CallBackRef) {
@@ -190,10 +178,6 @@ void timerIsr(void* callBackRef){
     isrInvocationCount++;  // Just keep track of the count for now.
     interrupts_isrFlagGlobal = 1;
     // Put the code that you want executed on a timer interrupt below here.
-
-#ifdef INTERRUPTS_ENABLE_HEARTBEAT_LED
-    updateHeartBeatLed();
-#endif
 
 //  This will capture ADC samples into the queue if defined.
 #ifdef INTERRUPTS_ENABLE_ADC_DATA_CAPTURE
