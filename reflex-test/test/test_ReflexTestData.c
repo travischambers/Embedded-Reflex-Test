@@ -58,7 +58,7 @@ void testReflexTestData_IncrementIndexShouldOnlyIncrementToTotalLength() {
     ReflexTestData_IncrementIndex();
   }
 
-  TEST_ASSERT_EQUAL(REFLEXTESTDATA_SEQUENCE_LENGTH-1, ReflexTestData_GetCurrentIndex());
+  TEST_ASSERT_EQUAL(REFLEXTESTDATA_SEQUENCE_LENGTH, ReflexTestData_GetCurrentIndex());
 }
 
 void testReflextTestData_GetNextLEDShouldReturnNextLEDOfSequence() {

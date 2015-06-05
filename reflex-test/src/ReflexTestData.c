@@ -50,8 +50,7 @@ int32_t ReflexTestData_GetNextLed() {
 }
 
 void ReflexTestData_IncrementIndex() {
-  // -1 so that index stays on the last element
-  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH-1) {
+  if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
     index++;
   }
 }

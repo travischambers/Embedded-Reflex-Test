@@ -145,6 +145,8 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       break;
     case blank_screen_st:
       currentState = wait_between_flash_st;
+      srand((unsigned) ReflexTestData_GetResponseTime());
+      ReflexTestData_GenerateSequence();
       break;
     case wait_between_flash_st:
       // Seed a random number
@@ -171,7 +173,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       break;
     case wait_for_button_st:
       // If the user doesn't push a button within two seconds, start the game over
-      if (buttonTimeoutTimer >= TWO_SECOND_WAIT && !ReflexTestData_IsCorrectButtonPressed()) {
+      if ((buttonTimeoutTimer >= TWO_SECOND_WAIT) && !ReflexTestData_IsCorrectButtonPressed()) {
         currentState = wait_info_st;
       }
       // the moment they do push a button, move states.
