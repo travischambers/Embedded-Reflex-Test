@@ -16,6 +16,8 @@ void LcdHardware_Init() {
 }
 
 void LcdHardware_ShowInfo(double* highScores, int32_t length) {
+  display_fillScreen(DISPLAY_BLACK);
+  display_setCursor(0,0);
 
   char str[255];
 
@@ -93,9 +95,9 @@ void LcdHardware_ShowStats(double average, double min, double max) {
   char str[255];
   sprintf(str, "Average Time: %lf", average);
   display_println(str);
-  sprintf(str, "Fastest Time: %lf", average);
+  sprintf(str, "Fastest Time: %lf", min);
   display_println(str);
-  sprintf(str, "Slowest Time: %lf", average);
+  sprintf(str, "Slowest Time: %lf", max);
   display_println(str);
 
 }

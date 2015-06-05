@@ -21,10 +21,7 @@ void ButtonConductor_Run() {
     case show_info_st:
       break;
     case wait_info_st:
-      //printf("in wait info state. reading buttons");
       pressedButton = ButtonHardware_Read();
-      if (pressedButton != 0)
-        printf("pressedButton = %d\n", pressedButton);
       ButtonModel_SetPressedButton(pressedButton);
       break;
     case wait_five_seconds_st:

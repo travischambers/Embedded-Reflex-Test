@@ -29,7 +29,7 @@ void ButtonModel_SetPressedButton(int32_t value) {
 }
 
 int32_t ButtonModel_GetPressedButton() {
-  ReflexTestData_GetPressedButton();
+  return ReflexTestData_GetPressedButton();
 }
 
 ReflexTest_st ButtonModel_GetCurrentState() {

@@ -18,10 +18,10 @@
 void LedModel_Init();
 
 /**
- * Returns the next LED to flash in the sequence.
+ * Returns the LED to flash in the sequence.
  * @return The number of the LED to flash next.
  */
-int32_t LedModel_GetNextLed();
+int32_t LedModel_GetLed();
 
 /**
  * Increments the Index of the ReflexTestData.

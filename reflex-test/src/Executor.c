@@ -100,6 +100,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       buttonTimeoutTimer++;
       break;
     case button_pressed_st:
+      flashTimer = 0; // reset flash timer
       break;
     case show_stats_st:
       waitStatsTimer = 0;
@@ -146,16 +147,13 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
     case blank_screen_st:
       currentState = wait_between_flash_st;
       srand((unsigned) ReflexTestData_GetResponseTime());
-      ReflexTestData_GenerateSequence();
-      break;
-    case wait_between_flash_st:
-      // Seed a random number
-      srand((unsigned) ReflexTestData_GetResponseTime());
+      ReflexTestData_GenerateSequence(rand());      // Seed a random number
 
       // Get a flash wait time between 2 and 4 seconds.
       // e.g. v3 = rand() % 30 + 1985;  <-- v3 in the range 1985-2014
       flashWait = (rand() % TWO_SECOND_WAIT) + TWO_SECOND_WAIT;
-
+      break;
+    case wait_between_flash_st:
       // Wait here for flashWait and then blink LED if we're not finished
       if (flashTimer >= flashWait && !ReflexTestData_IsSequenceDone()) {
         currentState = blink_led_st;
@@ -173,8 +171,8 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       break;
     case wait_for_button_st:
       // If the user doesn't push a button within two seconds, start the game over
-      if ((buttonTimeoutTimer >= TWO_SECOND_WAIT) && !ReflexTestData_IsCorrectButtonPressed()) {
-        currentState = wait_info_st;
+      if ((buttonTimeoutTimer >= FIVE_SECOND_WAIT) && !ReflexTestData_IsCorrectButtonPressed()) {
+        currentState = show_info_st;
       }
       // the moment they do push a button, move states.
       else if (ReflexTestData_IsCorrectButtonPressed()) {
@@ -185,6 +183,9 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       }
       break;
     case button_pressed_st:
+      // Get a flash wait time between 2 and 4 seconds.
+      // e.g. v3 = rand() % 30 + 1985;  <-- v3 in the range 1985-2014
+      flashWait = (rand() % TWO_SECOND_WAIT) + TWO_SECOND_WAIT;
       currentState = wait_between_flash_st;
       break;
     case show_stats_st:
@@ -196,6 +197,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       }
       break;
     case update_scores_st:
+      currentState = show_info_st;
       break;
    }
   // return the new state.
