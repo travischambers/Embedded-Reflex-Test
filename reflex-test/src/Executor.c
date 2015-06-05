@@ -50,7 +50,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       waitStatsTimer++;
       break;
     case update_scores_st:
-      ReflexTestData_updateScores();
+      ReflexTestData_UpdateScores();
       break;
   }
 

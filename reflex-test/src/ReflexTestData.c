@@ -141,3 +141,27 @@ double ReflexTestData_GetAverageResponseTime() {
 double* ReflexTestData_GetHighScores() {
   return highScores;
 }
+
+int compare_function(const void *a,const void *b) {
+  double *x = (double *) a;
+  double *y = (double *) b;
+
+
+  if (*x < *y) {
+    return -1;
+  }
+  else if (*x > *y) {
+    return 1;
+  }
+
+  return 0;
+}
+
+void ReflexTestData_UpdateScores() {
+
+  if (highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] < average) {
+    highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] = average;
+    qsort(highScores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, sizeof(double), compare_function);
+  }
+
+}
