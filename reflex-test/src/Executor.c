@@ -121,6 +121,13 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
       currentState = wait_info_st;
       break;
     case wait_info_st:
+      // Wait here until the user pressed a button
+      if (ReflexTestData_GetPressedButton() != 0x0) {
+        currentState = wait_five_seconds_st;
+      }
+      else {
+    	currentState = wait_info_st;
+      }
       break;
     case wait_five_seconds_st:
       // Wait here until a user pushes a button and holds it for 5 sec.
