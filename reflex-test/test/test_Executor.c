@@ -12,7 +12,7 @@ void setUp(void) {
 void tearDown(void) {
 }
 
-void testInitShouldCallInitOfAllConductors(void) {
+void testExecutor_InitShouldCallInitOfAllConductors(void) {
   ButtonConductor_Init_Expect();
   LedConductor_Init_Expect();
   TimerConductor_Init_Expect();
@@ -22,7 +22,7 @@ void testInitShouldCallInitOfAllConductors(void) {
   Executor_Init();
 }
 
-void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
+void testExecutor_RunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
   // First, read buttons
   ButtonConductor_Run_Expect();
 
@@ -35,7 +35,7 @@ void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
   // Finally, show the state information. This must be last to have accurate
   // data.
   LcdConductor_Run_Expect();
-  
+
   ReflexTestData_GetCurrentState_ExpectAndReturn(init_st);
   ReflexTestData_SetCurrentState_Expect(show_info_st);
 

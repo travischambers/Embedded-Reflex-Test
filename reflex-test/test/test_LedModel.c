@@ -23,7 +23,7 @@ void testLedModel_ShouldGetCurrentStateFromReflexTestData() {
   TEST_ASSERT_EQUAL(init_st, test);
 }
 
-void testLedModel_GetNextLedShouldGetLedFromReflexTestData() {
+void testLedModel_GetLedShouldGetLedFromReflexTestData() {
   ReflexTestData_GetLed_ExpectAndReturn(0x1);
   int32_t test = LedModel_GetLed();
   TEST_ASSERT_EQUAL(0x1, test);

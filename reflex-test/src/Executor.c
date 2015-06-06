@@ -68,7 +68,9 @@ void verboseStatePrint(ReflexTest_st currentState) {
 }
 
 ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
-  verboseStatePrint(currentState);
+  // Uncomment the line below to visually see state transitions.
+  //verboseStatePrint(currentState);
+  
   static uint32_t fiveSecondTimer = 0;
   static uint32_t flashTimer = 0;
   static uint32_t flashWait = 0;  // value for randomized flash wait
@@ -216,12 +218,13 @@ void Executor_Init(void) {
 
 bool Executor_Run(void) {
 
-  //state actions first
-  ButtonConductor_Run();
-  TimerConductor_Run();
-  // LED must come after Timer_Run()
-  LedConductor_Run();
-  LcdConductor_Run();
+  // Each sub-triad conductor performs ONLY Moore actions
+  // based on the current state. The order of these actions matters.
+
+  ButtonConductor_Run();  // First, read the buttons
+  TimerConductor_Run();   // Next, perform any timing operations
+  LedConductor_Run();     // Next do LED information, which updates the index
+  LcdConductor_Run();     // Finally, show state after all computation is done
 
   //state update next
   ReflexTest_st nextState = ReflexTest_TickFunction(ReflexTestData_GetCurrentState());

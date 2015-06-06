@@ -12,7 +12,7 @@
 #include <stdbool.h>
 
 // Uncomment the line below to enable debug output.
-#define REFLEXTESTDATA_DEBUG
+// #define REFLEXTESTDATA_DEBUG
 
 #define REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES 10
 #define REFLEXTESTDATA_ERROR -1
