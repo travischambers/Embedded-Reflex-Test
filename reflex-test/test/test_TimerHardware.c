@@ -27,13 +27,16 @@ void testTimerHardware_StartTimerShouldStartIntervalTimer0() {
 void testTimerHardware_GetResponseTimeShouldReturnDurationThatTheTimerRan() {
 
   //TODO figure out what "seconds" needs to be to have test pass
-  // double seconds = 10.85;
-  // double secondsToReturn = 10.85;
+  // double seconds = 0;
+  // double secsToReturn = 10.85;
   //
-  // intervalTimer_getTotalDurationInSeconds_IgnoreAndReturn(1);
-  // intervalTimer_getTotalDurationInSeconds_ReturnThruPtr_seconds(&secondsToReturn);
+  // intervalTimer_getTotalDurationInSeconds_IgnoreAndReturn(0);
+  // intervalTimer_getTotalDurationInSeconds_ReturnThruPtr_seconds(&secsToReturn);
   //
-  // TimerHardware_GetResponseTime();
+  // seconds = TimerHardware_GetResponseTime();
   //
-  // TEST_ASSERT_EQUAL(secondsToReturn, seconds);
+  // TEST_ASSERT_EQUAL(10.85, seconds);
+
+  TEST_IGNORE_MESSAGE("TODO: This test is currently not implemented "
+                      "because we don't know how to handle the nested ptr.")
 }

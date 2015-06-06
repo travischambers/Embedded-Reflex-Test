@@ -62,11 +62,34 @@ void testReflexTestData_IncrementIndexShouldOnlyIncrementToTotalLength() {
   TEST_ASSERT_EQUAL(REFLEXTESTDATA_SEQUENCE_LENGTH, ReflexTestData_GetCurrentIndex());
 }
 
-void testReflextTestData_GetLEDShouldReturnCurrentLEDOfSequence() {
+void testReflexTestData_GetLEDShouldReturnCurrentLEDOfSequence() {
   ReflexTestData_Init();
   // Generate a sequence of:
   // {2, 4, 2, 3, 2, 3, 4, 2, 4, 4};
   ReflexTestData_GenerateSequence(88);
 
   TEST_ASSERT_EQUAL(2, ReflexTestData_GetLed());
+}
+
+void testReflexTestData_IsSequenceDoneShouldReturnTrueWhenIndexReachesEnd() {
+  ReflexTestData_Init();
+
+  TEST_ASSERT_FALSE(ReflexTestData_IsSequenceDone());
+
+  // Increment the index to the end.
+  int i;
+  for (i = 0; i < REFLEXTESTDATA_SEQUENCE_LENGTH; i++) {
+    ReflexTestData_IncrementIndex();
+  }
+
+  TEST_ASSERT_TRUE(ReflexTestData_IsSequenceDone());
+}
+
+void testReflexTestData_UpdateScoresShouldSortTheListOfHighScores() {
+  // In order to automatically test this, we will need to:
+  //  1. Get the pointer to the high scores array
+  //  2. Set it to known values
+  //  3. Call update_scores_st
+  //  4. Verify that the sorting is correct.
+  TEST_IGNORE_MESSAGE("Still need to implement this test.");
 }

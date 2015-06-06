@@ -28,3 +28,11 @@ void testLedModel_GetLedShouldGetLedFromReflexTestData() {
   int32_t test = LedModel_GetLed();
   TEST_ASSERT_EQUAL(0x1, test);
 }
+
+void testLedModel_IsSequenceDoneShouldReturnBoolFromReflexTestData() {
+  ReflexTestData_IsSequenceDone_ExpectAndReturn(true);
+  TEST_ASSERT_TRUE(LedModel_IsSequenceDone());
+
+  ReflexTestData_IsSequenceDone_ExpectAndReturn(false);
+  TEST_ASSERT_FALSE(LedModel_IsSequenceDone());
+}
