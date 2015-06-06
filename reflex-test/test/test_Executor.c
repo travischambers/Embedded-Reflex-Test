@@ -23,11 +23,19 @@ void testInitShouldCallInitOfAllConductors(void) {
 }
 
 void testRunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
-
+  // First, read buttons
   ButtonConductor_Run_Expect();
-  LedConductor_Run_Expect();
+
+  // Then, manage the timers
   TimerConductor_Run_Expect();
-  LcdConductor_Run_Expect();  // must come after timerConductor to display accurate stats
+
+  // Next, work with the sequences and update the index
+  LedConductor_Run_Expect();
+
+  // Finally, show the state information. This must be last to have accurate
+  // data.
+  LcdConductor_Run_Expect();
+  
   ReflexTestData_GetCurrentState_ExpectAndReturn(init_st);
   ReflexTestData_SetCurrentState_Expect(show_info_st);
 

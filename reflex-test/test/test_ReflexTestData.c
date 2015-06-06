@@ -35,16 +35,17 @@ void testReflexTestData_InitShouldInitAllStateVariables() {
 }
 
 void testReflexTestData_CheckIfIsCorrectButtonWorks() {
+  ReflexTestData_Init();
   // Generate a sequence of:
-  // {1, 1, 1, 2, 3, 3, 3, 2, 2, 1};
+  // {2, 2, 2, 3, 4, 4, 4, 3, 3, 2};
   ReflexTestData_GenerateSequence(123);
 
   // Set the button to the correct button
-  ReflexTestData_SetPressedButton(0x1);
+  ReflexTestData_SetPressedButton(2);
   TEST_ASSERT_TRUE(ReflexTestData_IsCorrectButtonPressed());
 
   // Set button to incorrect button
-  ReflexTestData_SetPressedButton(0x3);
+  ReflexTestData_SetPressedButton(1);
   TEST_ASSERT_FALSE(ReflexTestData_IsCorrectButtonPressed());
 }
 
@@ -61,10 +62,11 @@ void testReflexTestData_IncrementIndexShouldOnlyIncrementToTotalLength() {
   TEST_ASSERT_EQUAL(REFLEXTESTDATA_SEQUENCE_LENGTH, ReflexTestData_GetCurrentIndex());
 }
 
-void testReflextTestData_GetNextLEDShouldReturnNextLEDOfSequence() {
+void testReflextTestData_GetLEDShouldReturnCurrentLEDOfSequence() {
+  ReflexTestData_Init();
   // Generate a sequence of:
-  // {1, 1, 1, 2, 3, 3, 3, 2, 2, 1};
-  ReflexTestData_GenerateSequence(123);
+  // {2, 4, 2, 3, 2, 3, 4, 2, 4, 4};
+  ReflexTestData_GenerateSequence(88);
 
-  TEST_ASSERT_EQUAL(1, ReflexTestData_GetNextLed());
+  TEST_ASSERT_EQUAL(2, ReflexTestData_GetLed());
 }

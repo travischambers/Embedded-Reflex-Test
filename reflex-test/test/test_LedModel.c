@@ -24,7 +24,7 @@ void testLedModel_ShouldGetCurrentStateFromReflexTestData() {
 }
 
 void testLedModel_GetNextLedShouldGetLedFromReflexTestData() {
-  ReflexTestData_GetNextLed_ExpectAndReturn(0x1);
-  int32_t test = LedModel_GetNextLed();
+  ReflexTestData_GetLed_ExpectAndReturn(0x1);
+  int32_t test = LedModel_GetLed();
   TEST_ASSERT_EQUAL(0x1, test);
 }

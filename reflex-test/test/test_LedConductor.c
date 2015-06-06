@@ -33,13 +33,15 @@ void testLedConductor_InitShouldCallModelAndHardwareInit(void) {
   LedConductor_Init();
 }
 
-void testLedConductor_ShouldDoNothingInShowInfoState(void) {
+void testLedConductor_BlankLEDsInShowInfoState(void) {
   LedModel_GetCurrentState_ExpectAndReturn(show_info_st);
+  LedHardware_BlankAllLeds_Expect();
   LedConductor_Run();
 }
 
-void testLedConductor_ShouldDoNothingInWaitInfoState(void) {
+void testLedConductor_BlankLEDsInWaitInfoState(void) {
   LedModel_GetCurrentState_ExpectAndReturn(wait_info_st);
+  LedHardware_BlankAllLeds_Expect();
   LedConductor_Run();
 }
 
@@ -61,8 +63,7 @@ void testLedConductor_ShouldDoNothingInWaitBetweenFlashState(void) {
 void testLedConductor_TurnOnTheNextLEDInLEDState(void) {
   // NOTE: The interval timer is started by the Timer Conductor
   LedModel_GetCurrentState_ExpectAndReturn(blink_led_st);
-  LedModel_GetNextLed_ExpectAndReturn(0x1);
-  LedModel_IncrementIndex_Expect();
+  LedModel_GetLed_ExpectAndReturn(0x1);
   LedHardware_Enable_Expect(0x1);
   LedConductor_Run();
 }
@@ -72,8 +73,9 @@ void testLedConductor_ShouldDoNothingInWaitForButtonState(void) {
   LedConductor_Run();
 }
 
-void testLedConductor_TurnOffTheLEDInButtonPressedState(void) {
+void testLedConductor_TurnOffTheLEDsAndIncrementInButtonPressedState(void) {
   LedModel_GetCurrentState_ExpectAndReturn(button_pressed_st);
+  LedModel_IncrementIndex_Expect();
   LedHardware_BlankAllLeds_Expect();
   LedConductor_Run();
 }

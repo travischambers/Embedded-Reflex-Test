@@ -14,36 +14,38 @@ void tearDown(void) {
  * This test tests the masking logic withing SetPressedButton.
  */
 void testButtonModel_SetPressedButtonShouldGivePrecedenceToLowestButton(void) {
+  // NOTE: The button model itself translates these bit values instructions
+  // {0, 1, 2, 3, 4} so that they match up with the generated sequences.
   uint32_t buttonValue = 0xF;
-  ReflexTestData_SetPressedButton_Expect(0x1);
+  ReflexTestData_SetPressedButton_Expect(1);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x3;
-  ReflexTestData_SetPressedButton_Expect(0x1);
+  ReflexTestData_SetPressedButton_Expect(1);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x6;
-  ReflexTestData_SetPressedButton_Expect(0x2);
+  ReflexTestData_SetPressedButton_Expect(2);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x4;
-  ReflexTestData_SetPressedButton_Expect(0x4);
+  ReflexTestData_SetPressedButton_Expect(3);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x8;
-  ReflexTestData_SetPressedButton_Expect(0x8);
+  ReflexTestData_SetPressedButton_Expect(4);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0xA;
-  ReflexTestData_SetPressedButton_Expect(0x2);
+  ReflexTestData_SetPressedButton_Expect(2);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x0;
-  ReflexTestData_SetPressedButton_Expect(0x0);
+  ReflexTestData_SetPressedButton_Expect(0);
   ButtonModel_SetPressedButton(buttonValue);
 
   buttonValue = 0x1;
-  ReflexTestData_SetPressedButton_Expect(0x1);
+  ReflexTestData_SetPressedButton_Expect(1);
   ButtonModel_SetPressedButton(buttonValue);
 }
 

@@ -3,6 +3,7 @@
 
 #include "mock_LcdHardware.h"
 #include "mock_LcdModel.h"
+#include "mock_ReflexTestData.h"
 
 void testLcdConductor_InitShouldCallModelAndHardwareInit() {
   LcdModel_Init_Expect();
@@ -14,7 +15,8 @@ void testLcdConductor_InitShouldCallModelAndHardwareInit() {
 void testLcdConductor_DisplayInfoInShowInfoState(void) {
   LcdModel_GetCurrentState_ExpectAndReturn(show_info_st);
   LcdModel_GetHighScores_ExpectAndReturn(NULL);
-  LcdHardware_ShowInfo_Expect(NULL, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES);
+  LcdModel_GetAverageResponseTime_ExpectAndReturn(1.23);
+  LcdHardware_ShowInfo_Expect(NULL, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, 1.23);
   LcdConductor_Run();
 }
 
