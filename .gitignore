@@ -1,0 +1,36 @@
+# Created by http://www.gitignore.io
+# Modified by Luke Hsiao
+
+### Eclipse ###
+*.pydevproject
+.metadata
+RemoteSystemsTempFiles/
+SDK.log
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# PDT-specific
+.buildpath
+
+# sbteclipse plugin
+.target
+
+# TeXlipse plugin
+.texlipse
+
+# Project specific build folder
+reflex-test/Debug/

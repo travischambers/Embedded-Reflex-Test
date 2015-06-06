@@ -1,7 +1,9 @@
 #ifndef _EXECUTOR_H
 #define _EXECUTOR_H
 
-#include "Types.h"
+#include <stdint.h>
+#include <stdbool.h>
+#include "ReflexTestData.h"
 
 void Executor_Init(void);
 bool Executor_Run(void);

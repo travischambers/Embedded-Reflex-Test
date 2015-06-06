@@ -1,9 +1,19 @@
 #include "ButtonHardware.h"
+#include "buttons.h"
+#include "intervalTimer.h"
 
-void ButtonHardWare_Init(void) {
-  ButtonHardware_SetGPIOsAsInput();
+#include <stdio.h>
+
+void ButtonHardware_Init(void) {
+
+  buttons_init(); //sets the buttons as inputs
+
 }
 
-void ButtonHardware_SetGPIOsAsInput(void) {
+int32_t ButtonHardware_Read() {
 
+  int32_t readButton;
+  readButton = buttons_read();
+
+  return readButton;
 }
