@@ -12,7 +12,9 @@ An exploration of the Model Conductor Hardware architecture and Test Driven Deve
 ## What does this code do?
 We've created a modular embedded architecture that runs a reflex test game that can be used for interactive STEM displays. A simple display can allow educators to share simple principles about electrical engineering and computer science with young students. The Embedded Reflex Test highlights embedded systems, FPGAs, and good software development habits.
 
-View our full [Project Description](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/Project-Specifications) for details. 
+View our full [Project Description](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/Project-Specifications) for details.
+
+[![Video Demonstration](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/img/vid-screenshot.png)](https://youtu.be/VHYy5v7rVgc)
 
 ## What is this repository for?
 
