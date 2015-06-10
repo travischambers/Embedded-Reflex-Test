@@ -70,7 +70,7 @@ void verboseStatePrint(ReflexTest_st currentState) {
 ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
   // Uncomment the line below to visually see state transitions.
   //verboseStatePrint(currentState);
-  
+
   static uint32_t fiveSecondTimer = 0;
   static uint32_t flashTimer = 0;
   static uint32_t flashWait = 0;  // value for randomized flash wait
@@ -129,7 +129,7 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
         currentState = wait_five_seconds_st;
       }
       else {
-    	currentState = wait_info_st;
+    	  currentState = wait_info_st;
       }
       break;
     case wait_five_seconds_st:
