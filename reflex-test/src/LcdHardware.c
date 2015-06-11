@@ -37,7 +37,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
 
   display_println("");
 
-  display_println("Hold any button to begin.");
+  display_println("Hold any button for 5 seconds to begin.");
 
   display_println("");
   display_println("");
@@ -54,7 +54,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
   int i;
   for (i = 0; i < 5; i++) {
     display_setCursor(0, CENTERED_Y + (LINE_HEIGHT*(i+1)));
-    sprintf(str, "%d. %lf", (i+1), highScores[i]);
+    sprintf(str, "%d. %lf sec", (i+1), highScores[i]);
     // highlight the newest high score.
     if(fabs(highScores[i] - newScore) < epsilon) {
       display_setTextColor(DISPLAY_GREEN);
@@ -67,7 +67,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
 
   for (i = 5; i < 10; i++) {
     display_setCursor(CENTERED_X, CENTERED_Y + (LINE_HEIGHT*(i-4)));
-    sprintf(str, "%d. %lf", (i+1), highScores[i]);
+    sprintf(str, "%d. %lf sec", (i+1), highScores[i]);
     // highlight the newest high score.
     if(fabs(highScores[i] - newScore) < epsilon) {
       display_setTextColor(DISPLAY_GREEN);
@@ -86,11 +86,11 @@ void LcdHardware_BlankScreen(void) {
 void LcdHardware_ShowStats(double average, double min, double max) {
 
   char str[255];
-  sprintf(str, "Average Time: %lf", average);
+  sprintf(str, "Average Time: %lf sec", average);
   display_println(str);
-  sprintf(str, "Fastest Time: %lf", min);
+  sprintf(str, "Fastest Time: %lf sec", min);
   display_println(str);
-  sprintf(str, "Slowest Time: %lf", max);
+  sprintf(str, "Slowest Time: %lf sec", max);
   display_println(str);
 
 }
