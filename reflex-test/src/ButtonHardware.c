@@ -1,7 +1,6 @@
 #include "ButtonHardware.h"
 #include "buttons.h"
 #include "intervalTimer.h"
-
 #include <stdio.h>
 
 void ButtonHardware_Init(void) {

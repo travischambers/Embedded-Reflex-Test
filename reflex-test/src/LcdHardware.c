@@ -11,9 +11,13 @@
 
 #include <stdio.h>
 
-#define LINE_HEIGHT 10
+#define LINE_HEIGHT   10
 #define CENTERED_Y    (display_height()/2)
 #define CENTERED_X    (display_width()/2)
+#define TEXTSIZE_H1   4
+#define TEXTSIZE_H2   2
+#define TEXTSIZE_H3   1
+#define MAX_STR_LEN   255
 
 void LcdHardware_Init() {
   display_init();
@@ -26,11 +30,11 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
   display_fillScreen(DISPLAY_BLACK);
   display_setCursor(0,0);
 
-  char str[255];
+  char str[MAX_STR_LEN];
 
-  display_setTextSize(2);
+  display_setTextSize(TEXTSIZE_H2);
   display_println("How to play Reflex Test");
-  display_setTextSize(1);
+  display_setTextSize(TEXTSIZE_H3);
   display_println("");
   display_println("When the game begins, one of the LEDs will flash on.");
   display_println("Press the corresponding button as fast as you can.");
@@ -45,11 +49,11 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
   display_println("");
   display_println("");
   display_println("");
-  display_setTextSize(2);
+  display_setTextSize(TEXTSIZE_H2);
 
   display_println("High Scores");
 
-  display_setTextSize(1);
+  display_setTextSize(TEXTSIZE_H3);
 
   int i;
   for (i = 0; i < 5; i++) {
@@ -84,8 +88,11 @@ void LcdHardware_BlankScreen(void) {
 }
 
 void LcdHardware_ShowStats(double average, double min, double max) {
+  display_setCursor(0, 0);  // set cursor to origin
+  display_setTextSize(TEXTSIZE_H2); // Make Text Larger
+  char str[MAX_STR_LEN];  // buffer for characters
 
-  char str[255];
+  // Print all the stats
   sprintf(str, "Average Time: %lf sec", average);
   display_println(str);
   sprintf(str, "Fastest Time: %lf sec", min);

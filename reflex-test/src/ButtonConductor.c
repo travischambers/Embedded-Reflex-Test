@@ -2,9 +2,9 @@
 #include "ButtonHardware.h"
 #include "ButtonModel.h"
 #include "buttons.h"
-
 #include <stdint.h>
 #include <stdio.h>
+
 void ButtonConductor_Init() {
   ButtonModel_Init();
   ButtonHardware_Init();
