@@ -14,7 +14,7 @@ We've created a modular embedded architecture that runs a reflex test game that 
 
 View our full [Project Description](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/Project-Specifications) for details.
 
-[![Video Demonstration](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/img/vid-screenshot.png)](https://youtu.be/VHYy5v7rVgc)
+[![Video Demonstration](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki/img/vid-screenshot.PNG)](https://youtu.be/VHYy5v7rVgc)
 
 ## What is this repository for?
 
