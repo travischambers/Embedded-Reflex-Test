@@ -166,3 +166,10 @@ void ReflexTestData_UpdateScores() {
   }
 
 }
+
+ReflexTestData_TestOnly_SetScores(double testScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES]) {
+  int i;
+  for (i = 0; i < REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES; i++) {
+    highScores[i] = testScores[i];
+  }
+}
