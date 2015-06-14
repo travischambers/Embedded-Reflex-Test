@@ -1,10 +1,3 @@
-/*
- * TimerHardware.c
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #include "TimerHardware.h"
 #include "ReflexTestData.h"
 #include "intervalTimer.h"

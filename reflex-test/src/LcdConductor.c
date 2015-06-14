@@ -1,10 +1,3 @@
-/*
- * LcdConductor.c
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #include "LcdConductor.h"
 #include "LcdHardware.h"
 #include "LcdModel.h"
@@ -22,6 +15,7 @@ void LcdConductor_Run() {
     case init_st:
       break;
     case show_info_st:
+      // Print out the instructions, as well as the most recent 10 high scores.
       scores = LcdModel_GetHighScores();
       average = LcdModel_GetAverageResponseTime();
       LcdHardware_ShowInfo(scores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, average);
@@ -31,7 +25,7 @@ void LcdConductor_Run() {
     case wait_five_seconds_st:
       break;
     case blank_screen_st:
-      LcdHardware_BlankScreen();
+      LcdHardware_BlankScreen();  // Blank the LCD screen
       break;
     case wait_between_flash_st:
       break;
@@ -42,6 +36,7 @@ void LcdConductor_Run() {
     case button_pressed_st:
       break;
     case show_stats_st:
+      // Print out the average, min, and max times for the round.
       average = LcdModel_GetAverageResponseTime();
       min = LcdModel_GetMinResponseTime();
       max = LcdModel_GetMaxResponseTime();
@@ -50,7 +45,7 @@ void LcdConductor_Run() {
     case wait_stats_st:
       break;
     case update_scores_st:
-      LcdHardware_BlankScreen();
+      LcdHardware_BlankScreen();  // Blank the LCD screen
       break;
   }
 }

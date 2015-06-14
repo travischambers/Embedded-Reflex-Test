@@ -1,10 +1,3 @@
-/*
- * LcdHardware.c
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #include "LcdHardware.h"
 #include "display.h"
 #include "math.h"
@@ -27,10 +20,11 @@ void LcdHardware_Init() {
 void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
   double epsilon = 0.0000001; // used for checking float equality
 
+  // Blank the screen and set the cursor to the top left corner.
   display_fillScreen(DISPLAY_BLACK);
   display_setCursor(0,0);
 
-  char str[MAX_STR_LEN];
+  char str[MAX_STR_LEN];  // Create a buffer for printing.
 
   display_setTextSize(TEXTSIZE_H2);
   display_println("How to play Reflex Test");
@@ -55,6 +49,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
 
   display_setTextSize(TEXTSIZE_H3);
 
+  // Begin printing out the 10 high scores.
   int i;
   for (i = 0; i < 5; i++) {
     display_setCursor(0, CENTERED_Y + (LINE_HEIGHT*(i+1)));
@@ -85,7 +80,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
 }
 
 void LcdHardware_BlankScreen(void) {
-  display_fillScreen(DISPLAY_BLACK);
+  display_fillScreen(DISPLAY_BLACK);  // blank the screen.
 }
 
 void LcdHardware_ShowStats(double average, double min, double max) {

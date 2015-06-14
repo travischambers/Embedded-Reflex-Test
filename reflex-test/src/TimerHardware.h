@@ -1,10 +1,3 @@
-/*
- * TimerHardware.h
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #ifndef TIMERHARDWARE_H_
 #define TIMERHARDWARE_H_
 

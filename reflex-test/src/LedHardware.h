@@ -1,16 +1,11 @@
-/*
- * LedHardware.h
- *
- *  Created on: Jun 1, 2015
- *      Author: travis
- */
-
 #ifndef LEDHARDWARE_H
 #define LEDHARDWARE_H
 
-#include <stdbool.h>
 #include <stdint.h>
 
+/**
+ * Initialization function for the LED Hardware.
+ */
 void LedHardware_Init(void);
 
 /**

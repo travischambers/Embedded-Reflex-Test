@@ -10,9 +10,5 @@ void ButtonHardware_Init(void) {
 }
 
 int32_t ButtonHardware_Read() {
-
-  int32_t readButton;
-  readButton = buttons_read();
-
-  return readButton;
+  return buttons_read();  // Read the value of the buttons and return.
 }

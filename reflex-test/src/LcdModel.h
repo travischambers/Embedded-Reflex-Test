@@ -1,15 +1,11 @@
-/*
- * LcdModel.h
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #ifndef LCDMODEL_H_
 #define LCDMODEL_H_
 
 #include "ReflexTestData.h"
 
+/**
+ * Initialization function for the LCD Model.
+ */
 void LcdModel_Init(void);
 
 /**
