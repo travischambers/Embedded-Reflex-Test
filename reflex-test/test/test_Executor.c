@@ -41,7 +41,3 @@ void testExecutor_RunShouldCallRunForEachConductorAndReturnTrueAlways(void) {
 
   TEST_ASSERT_EQUAL(true, Executor_Run());
 }
-
-void testExecutor_NeedToAddStateMachineTests() {
-  TEST_IGNORE_MESSAGE("TODO: Add high-level state machine tests.");
-}

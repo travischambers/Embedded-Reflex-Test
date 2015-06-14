@@ -9,13 +9,15 @@
 void ButtonHardware_Init(void);
 
 /**
- * This reads the value of the GPIORegister
- * @return  The value of the buttons being read
- * BUTTONS_BTN0_MASK       0x1
- * BUTTONS_BTN1_MASK       0x2
- * BUTTONS_BTN2_MASK       0x4
- * BUTTONS_BTN3_MASK       0x8
- * If multiple buttons are pressed the total value is returned.
+* This reads the value of the GPIO of the buttons.
+* Each button corresponds with a bit in the lower 4 bits
+* of the GPIO register.
+ * @return  The value of the buttons being read.
+ *              BUTTONS_BTN0_MASK       0x1
+ *              BUTTONS_BTN1_MASK       0x2
+ *              BUTTONS_BTN2_MASK       0x4
+ *              BUTTONS_BTN3_MASK       0x8
+ *              If multiple buttons are pressed the total value is returned.
  */
 int32_t ButtonHardware_Read(void);
 

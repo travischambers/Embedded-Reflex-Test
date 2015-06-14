@@ -3,6 +3,7 @@
 #include "LedConductor.h"
 #include "TimerConductor.h"
 #include "LcdConductor.h"
+#include "ReflexTestData.h"
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -12,7 +13,9 @@
 #define ONE_SECOND_WAIT   (1000 / (TICK_PERIOD))
 
 /**
- * This function will print the current state of the SM.
+ * This is a helper function that can print out the current state of the SM.
+ * This only prints out the state when the state changes, and can be useful
+ * in visually seeing how the state transitions are happening.
  */
 void verboseStatePrint(ReflexTest_st currentState) {
   static ReflexTest_st previousState;
@@ -67,6 +70,13 @@ void verboseStatePrint(ReflexTest_st currentState) {
   }
 }
 
+/**
+ * This is the primary tick function that drives the game's state machine.
+ * It takes the current state of the game, performs the necessary actions,
+ * and then returns the next state of the game.
+ * @param  currentState The current state of the game.
+ * @return              The next state of the game.
+ */
 ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
   // Uncomment the line below to visually see state transitions.
   //verboseStatePrint(currentState);
@@ -207,7 +217,6 @@ ReflexTest_st ReflexTest_TickFunction(ReflexTest_st currentState) {
 }
 
 void Executor_Init(void) {
-
   //call init on each of the conductors
   ButtonConductor_Init();
   LedConductor_Init();
@@ -217,10 +226,8 @@ void Executor_Init(void) {
 }
 
 bool Executor_Run(void) {
-
   // Each sub-triad conductor performs ONLY Moore actions
   // based on the current state. The order of these actions matters.
-
   ButtonConductor_Run();  // First, read the buttons
   TimerConductor_Run();   // Next, perform any timing operations
   LedConductor_Run();     // Next do LED information, which updates the index
@@ -229,5 +236,5 @@ bool Executor_Run(void) {
   //state update next
   ReflexTest_st nextState = ReflexTest_TickFunction(ReflexTestData_GetCurrentState());
   ReflexTestData_SetCurrentState(nextState);
-  return true;
+  return true;  // always return true so it can be the condition of a while(1)
 }

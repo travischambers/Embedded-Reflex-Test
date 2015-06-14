@@ -4,7 +4,6 @@
 [![Stories in Ready](https://badge.waffle.io/tjchambers32/embedded-reflex-test.png?label=ready&title=Ready)](https://waffle.io/tjchambers32/embedded-reflex-test)
 [![Join the chat at https://gitter.im/tjchambers32/Embedded-Reflex-Test](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/tjchambers32/Embedded-Reflex-Test?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-Version: 0.8.0<br>
 Wiki Page: [Reflex Test Wiki](https://github.com/tjchambers32/Embedded-Reflex-Test/wiki)
 
 An exploration of the Model Conductor Hardware architecture and Test Driven Development in Embedded C .

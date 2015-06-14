@@ -21,6 +21,7 @@ static double average = 0.0;
 static double highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES];
 
 void ReflexTestData_Init() {
+  // Initialize all of the global variables.
   index = 0;
   pressedButton = 0;
   responseTime = 0.0;
@@ -41,7 +42,7 @@ bool ReflexTestData_IsSequenceDone() {
 }
 
 int32_t ReflexTestData_GetLed() {
-
+  // Return the value of the current LED
   if (index < REFLEXTESTDATA_SEQUENCE_LENGTH) {
    return sequence[index];
   }
@@ -60,6 +61,9 @@ int32_t ReflexTestData_GetCurrentIndex() {
   return index;
 }
 
+/**
+ * Helper function that prints our the contents of the generated sequence.
+ */
 void ReflexTestData_PrintSequence() {
   int i;
   printf("{");
@@ -143,10 +147,15 @@ double* ReflexTestData_GetHighScores() {
   return highScores;
 }
 
+/**
+ * Helper function that performs a comparison of two double values.
+ * @param  a The 1st double to compare.
+ * @param  b The 2nd double to compare
+ * @return   -1 if A is less than b, 1 if A is greater than b, or 0 otherwise.
+ */
 int compare_function(const void *a,const void *b) {
   double *x = (double *) a;
   double *y = (double *) b;
-
 
   if (*x < *y) {
     return -1;
@@ -159,10 +168,20 @@ int compare_function(const void *a,const void *b) {
 }
 
 void ReflexTestData_UpdateScores() {
-
+  // If the slowest score in the high scores list is slower than the most recent
+  // score, replace the slowest score with the new average, and then sort.
   if (highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] > average) {
     highScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES-1] = average;
     qsort(highScores, REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES, sizeof(double), compare_function);
   }
+}
 
+/**
+ * Helper function used in Unit testing to give access to the scores array.
+ */
+ReflexTestData_TestOnly_SetScores(double testScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES]) {
+  int i;
+  for (i = 0; i < REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES; i++) {
+    highScores[i] = testScores[i];
+  }
 }

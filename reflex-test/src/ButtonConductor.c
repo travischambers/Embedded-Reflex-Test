@@ -2,9 +2,9 @@
 #include "ButtonHardware.h"
 #include "ButtonModel.h"
 #include "buttons.h"
-
 #include <stdint.h>
 #include <stdio.h>
+
 void ButtonConductor_Init() {
   ButtonModel_Init();
   ButtonHardware_Init();
@@ -21,10 +21,12 @@ void ButtonConductor_Run() {
     case show_info_st:
       break;
     case wait_info_st:
+      // Poll the buttons in this state.
       pressedButton = ButtonHardware_Read();
       ButtonModel_SetPressedButton(pressedButton);
       break;
     case wait_five_seconds_st:
+      // Poll the buttons in this state.
       pressedButton = ButtonHardware_Read();
       ButtonModel_SetPressedButton(pressedButton);
       break;
@@ -35,6 +37,7 @@ void ButtonConductor_Run() {
     case blink_led_st:
       break;
     case wait_for_button_st:
+      // Poll the buttons in this state.
       pressedButton = ButtonHardware_Read();
       ButtonModel_SetPressedButton(pressedButton);
       break;

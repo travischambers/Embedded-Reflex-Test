@@ -1,10 +1,3 @@
-/*
- * LcdHardware.h
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #ifndef LCDHARDWARE_H_
 #define LCDHARDWARE_H_
 
@@ -30,9 +23,9 @@ void LcdHardware_BlankScreen(void);
 /**
  * Displays the MIN, MAX, and AVERAGE response times
  * from the last round to the user.
- * @param average the average time the user took to respond that round
- * @param min     the fastest time the player recorded that round
- * @param max     the slowest time the player recorded that round
+ * @param average The average time the user took to respond that round.
+ * @param min     The fastest time the player recorded that round.
+ * @param max     The slowest time the player recorded that round.
  */
 void LcdHardware_ShowStats(double average, double min, double max);
 

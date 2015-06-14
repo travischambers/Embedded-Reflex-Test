@@ -1,16 +1,8 @@
-/*
- * LedModel.h
- *
- *  Created on: Jun 1, 2015
- *      Author: travis
- */
-
 #ifndef LEDMODEL_H_
 #define LEDMODEL_H_
 
 #include "ReflexTestData.h"
 #include <stdint.h>
-#include <stdbool.h>
 
 /**
  * Initialization function for the LED Model.

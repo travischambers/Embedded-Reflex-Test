@@ -1,10 +1,3 @@
-/*
- * TimerConductor.c
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #include "TimerConductor.h"
 #include "TimerHardware.h"
 #include "TimerModel.h"
@@ -21,6 +14,9 @@ void TimerConductor_Run() {
     case init_st:
       break;
     case show_info_st:
+      // Start the timer when the info is printed. This is then stopped when
+      // The user pushes a button and the value is used to seed our random
+      // generator.
       TimerHardware_ResetTimer();
       TimerHardware_StartTimer();
       break;
@@ -29,14 +25,19 @@ void TimerConductor_Run() {
     case wait_five_seconds_st:
       break;
     case blank_screen_st:
+      // Stop the timer, and set the most recent response time.
       TimerHardware_StopTimer();
       responseTime = TimerHardware_GetResponseTime();
       TimerModel_SetMostRecentResponseTime(responseTime);
+
+      // Clear the old stats in preparation for a new round.
       TimerModel_ClearOldStats();
       break;
     case wait_between_flash_st:
       break;
     case blink_led_st:
+      // Start the timer when an LED is enabled. This is stopped once the user
+      // pushes the correct button.
       TimerHardware_ResetTimer();
       TimerHardware_StartTimer();
       break;

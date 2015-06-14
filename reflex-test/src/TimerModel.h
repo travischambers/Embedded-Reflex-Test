@@ -1,15 +1,11 @@
-/*
- * TimerModel.h
- *
- *  Created on: Jun 3, 2015
- *      Author: travis
- */
-
 #ifndef TIMERMODEL_H_
 #define TIMERMODEL_H_
 
 #include "ReflexTestData.h"
 
+/**
+ * Initialization function that sets all of the global variable values.
+ */
 void TimerModel_Init(void);
 
 /**

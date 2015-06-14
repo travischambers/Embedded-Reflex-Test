@@ -86,10 +86,57 @@ void testReflexTestData_IsSequenceDoneShouldReturnTrueWhenIndexReachesEnd() {
 }
 
 void testReflexTestData_UpdateScoresShouldSortTheListOfHighScores() {
-  // In order to automatically test this, we will need to:
-  //  1. Get the pointer to the high scores array
-  //  2. Set it to known values
+  // In order to automatically test this, we need to:
+  //  1. Set the high scores to a predetermined, unsorted array.
+  //  2. Set the average score to a predetermined value.
   //  3. Call update_scores_st
   //  4. Verify that the sorting is correct.
-  TEST_IGNORE_MESSAGE("Still need to implement this test.");
+  //
+  //  Note: update_scores not only sorts, but also drops the slowest time and
+  //  adds the average to the list, if the average is faster than the slowest
+  //  high score.
+
+  double testScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES] =
+  {
+    9.111,
+    8.222,
+    7.333,
+    6.444,
+    5.555,
+    4.666,
+    3.777,
+    2.888,
+    1.999,
+    15.50 //this time will be dropped
+  };
+
+
+  double sortedScores[REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES] =
+  {
+    1.111, //update scores updates with the current average
+    1.999,
+    2.888,
+    3.777,
+    4.666,
+    5.555,
+    6.444,
+    7.333,
+    8.222,
+    9.111
+  };
+
+  double inputAverage = 1.111;
+  ReflexTestData_TestOnly_SetScores(testScores);
+  ReflexTestData_SetAverageResponseTime(inputAverage);
+
+  ReflexTestData_UpdateScores();
+
+  double* returnedScores = ReflexTestData_GetHighScores();
+
+  int i;
+  for (i = 0; i < REFLEXTESTDATA_NUMBER_OF_HIGH_SCORES; i++) {
+    TEST_ASSERT_EQUAL_FLOAT(returnedScores[i], sortedScores[i]);
+    printf("returnedScore: %lf    sortedScore: %lf\n", returnedScores[i], sortedScores[i]);
+  }
+
 }
