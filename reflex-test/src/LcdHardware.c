@@ -60,6 +60,7 @@ void LcdHardware_ShowInfo(double* highScores, int32_t length, double newScore) {
     display_setCursor(0, CENTERED_Y + (LINE_HEIGHT*(i+1)));
     sprintf(str, "%d. %lf sec", (i+1), highScores[i]);
     // highlight the newest high score.
+    // NOTE: if user plays but doesn't make high scores, no score is highlighted
     if(fabs(highScores[i] - newScore) < epsilon) {
       display_setTextColor(DISPLAY_GREEN);
     }
