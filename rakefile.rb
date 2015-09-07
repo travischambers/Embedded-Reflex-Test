@@ -1,3 +1,6 @@
+require 'coveralls'
+Coveralls.wear!
+
 PROJECT_CEEDLING_ROOT = "reflex-test/vendor/ceedling"
 load "#{PROJECT_CEEDLING_ROOT}/lib/ceedling.rb"
 
