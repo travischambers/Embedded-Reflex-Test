@@ -4,6 +4,9 @@
 #   [Released under MIT License. Please refer to license.txt for details]
 # ==========================================
 
+require 'coveralls'
+Coveralls.wear!
+
 #!/usr/bin/ruby
 #
 # unity_test_summary.rb
