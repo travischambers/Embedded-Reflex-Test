@@ -1,5 +1,7 @@
 source "http://rubygems.org/"
 
+gem 'coveralls', require: false
+
 gem "bundler", ">= 1.3.5"
 gem "rake", ">= 0.9.2.2"
 
@@ -10,4 +12,4 @@ gem "diy"
 gem "rr"
 gem "thor"
 
-gem 'coveralls', require: false
+
