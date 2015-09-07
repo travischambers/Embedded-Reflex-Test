@@ -9,3 +9,5 @@ gem "constructor"
 gem "diy"
 gem "rr"
 gem "thor"
+
+gem 'coveralls', require: false
