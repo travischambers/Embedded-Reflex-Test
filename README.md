@@ -19,7 +19,7 @@ View our full [Project Description](https://github.com/tjchambers32/Embedded-Ref
 
 We're learning the concepts of Test Driven Development for embedded systems by following the Model Conductor Hardware architecture established [here](https://drive.google.com/file/d/0B1Phjj5PHLKleWJZNl8tV1pmZEk/view?usp=sharing). We'll be drawing from examples created by ThrowTheSwitch in [this](https://github.com/ThrowTheSwitch/CMock) repo.
 
-As a by product, we've created an extensible software architecture for a simple reflext test game that can be used for interactive STEM displays.
+As a by product, we've created an extensible software architecture for a simple reflex test game that can be used for interactive STEM displays.
 
 ## Who do I talk to?
 
